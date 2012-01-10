@@ -1,21 +1,7 @@
  Installation:
 
-    git clone git@bitbucket.org:korpz/dotvim.git
+    git clone git@github.com:emileswarts/vim.git
 
 Create symlinks:
 
     ln -s ~/.vim/.vimrc ~/.vimrc
-
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
-
-To add new plugins as submodules
-
-cd ~/.vim
-mkdir ~/.vim/bundle
-git submodule add http://github.com/test/vim-test.git bundle/test
-git add .
-git commit -m "Install new bundle"
