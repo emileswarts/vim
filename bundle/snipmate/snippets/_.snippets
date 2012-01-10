@@ -1,0 +1,41 @@
+# Global snippets
+
+# (c) holds no legal value ;)
+snippet c)
+	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
+snippet date
+	`strftime("%Y-%m-%d")`
+snippet ddate
+	`strftime("%B %d, %Y %h:%m")`
+snippet dt
+	`strftime('%Y-%m-%d, %H:%M:%S')`
+# Hi Regards
+snippet hir 
+	Hi ${1:client}
+
+	Regards
+	Emile
+
+# Hi Cheers
+snippet hic 
+	Hi ${1:client}
+
+	cheers emile
+
+# Fatbeehive debug link
+snippet fbdl 
+	Hi ${1:client}
+
+	Please follow the link below to give me more information about your browser. 
+	http://www.fatbeehive.com/debug?notify=emile@fatbeehive.com&client=${1:client} 
+
+	Regards
+	Emile
+
+# Fatbeehive client contact
+snippet fbcc
+	Hey ${1:beehiver}
+
+	Can you please call ${1:client} on ${1:number}.
+
+	cheers emile
