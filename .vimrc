@@ -140,6 +140,7 @@ nnoremap <leader>l :set list!<CR>
 " Search forward with f key
 noremap ,, ;
 
+map <tab> %
 
 "nerd tree toggle
 nnoremap <leader>k :ZoomWin<CR>
