@@ -68,9 +68,14 @@ syntax on
 
 map <tab> %
 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Use sane regexes.
 nnoremap / /\v
 vnoremap / /\v
+
+noremap <leader><space> :noh<cr> :call clearmatches<cr>
 
 "Bubble single lines
 nnoremap <C-UP> ddkP
