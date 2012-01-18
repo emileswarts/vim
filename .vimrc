@@ -99,6 +99,8 @@ inoremap hh <ESC>
 "Make D act normally
 nmap D d$
 
+nnoremap S i<cr><esc><right>
+
 "change behaviour of k to *
 noremap K *
  
