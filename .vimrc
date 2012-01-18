@@ -239,6 +239,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"change case of current word in insert mode
+nnoremap <C-U> gUiw
+inoremap <C-U> <esc>gUiwea
+
 "php cheat for tags
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
 let g:user_zen_leader_key = '<c-y>'
