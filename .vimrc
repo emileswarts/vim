@@ -9,6 +9,7 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Basic options ----------------------------------------------------------- {{{
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -47,6 +48,7 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 set listchars=tab:▸\ ,eol:❤
+" }}}
 
 let mapleader = ","
 let g:yankring_window_use_bottom = 0
