@@ -121,7 +121,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 "FATBEEHIVE bk_debug function
 vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
-vnoremap <leader>b yo<ESC>ibk_debug(<ESC>hpli,false, true<ESC>A;<ESC>
+vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
 vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
 vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
 
@@ -242,8 +242,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 "change case of current word in insert mode
-nnoremap <C-U> gUiw
-inoremap <C-U> <esc>gUiwea
+"nnoremap <C-U> gUiw
+"inoremap <C-U> <esc>gUiwea
 
 "php cheat for tags
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
