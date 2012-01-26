@@ -215,6 +215,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 "paste from system clipboard
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
+nnoremap S i<cr><esc><right>
 
 "quit
 nnoremap <leader>q :q!<CR>
