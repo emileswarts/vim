@@ -540,3 +540,6 @@ augroup END
  let php_special_functions = 1
  let php_alt_comparisons = 1
  let php_highlight_quotes = 1
+ let php_show_semicolon = 1
+ let php_smart_semicolon = 1
+ let php_show_semicolon_error = 1
