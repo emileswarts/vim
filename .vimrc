@@ -513,3 +513,6 @@ augroup ft_statuslinecolor
     au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
     au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
 augroup END
+
+"open buffers in tabs
+:au BufAdd,BufNewFile * nested tab sball
