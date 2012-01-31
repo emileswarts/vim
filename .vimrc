@@ -9,6 +9,7 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Basic options ----------------------------------------------------------- {{{
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -47,6 +48,7 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 set listchars=tab:▸\ ,eol:❤
+" }}}
 
 let mapleader = ","
 let g:yankring_window_use_bottom = 0
@@ -68,9 +70,14 @@ syntax on
 
 map <tab> %
 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Use sane regexes.
 nnoremap / /\v
 vnoremap / /\v
+
+noremap <leader><space> :noh<cr> :call clearmatches<cr>
 
 "Bubble single lines
 nnoremap <C-UP> ddkP
@@ -94,6 +101,8 @@ inoremap hh <ESC>
 "Make D act normally
 nmap D d$
 
+nnoremap S i<cr><esc><right>
+
 "change behaviour of k to *
 noremap K *
  
@@ -114,7 +123,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 "FATBEEHIVE bk_debug function
 vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
-vnoremap <leader>b yo<ESC>ibk_debug(<ESC>hpli,false, true<ESC>A;<ESC>
+vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
 vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
 vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
 
@@ -140,6 +149,7 @@ nnoremap <leader>l :set list!<CR>
 " Search forward with f key
 noremap ,, ;
 
+map <tab> %
 
 "nerd tree toggle
 nnoremap <leader>k :ZoomWin<CR>
@@ -205,6 +215,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 "paste from system clipboard
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
+nnoremap S i<cr><esc><right>
 
 "quit
 nnoremap <leader>q :q!<CR>
@@ -232,6 +243,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+"change case of current word in insert mode
+"nnoremap <C-U> gUiw
+"inoremap <C-U> <esc>gUiwea
 
 "php cheat for tags
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
