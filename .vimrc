@@ -248,6 +248,9 @@ map <C-l> <C-w>l
 "nnoremap <C-U> gUiw
 "inoremap <C-U> <esc>gUiwea
 
+au BufRead *.php set ft=php.html
+au BufNewFile *.php set ft=php.html
+
 "php cheat for tags
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
 let g:user_zen_leader_key = '<c-y>'
