@@ -1,7 +1,7 @@
 "WELCOME{{{
-"EMILE SWARTS VIMRC"
-"COLEMAK KEYBOARD LAYOUT"
-"""""""""""""""""""""}}}
+"EMILE SWARTS VIMRC
+"COLEMAK KEYBOARD LAYOUT
+"}}}
 "PATHOGEN{{{
 filetype off
 
@@ -211,74 +211,80 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 "}}}
 " LEADER REMAP KEYS{{{
-noremap <leader><space> :noh<cr> :call clearmatches<cr>
-"FATBEEHIVE bk_debug function
-vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
-vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
-vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
-vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
+	" MISC {{{
+		noremap <leader><space> :noh<cr> :call clearmatches<cr>
+	"}}}
+	" B {{{
+		"FATBEEHIVE bk_debug function
+		vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
+		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
+		vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
+		vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
 
-"FATBEEHIVE bk_debug function
-nnoremap <leader>bn :BlogNew<CR>
-nnoremap <leader>bsp :BlogSave publish<CR>
-nnoremap <leader>bl :BlogList<CR>
+		"FATBEEHIVE bk_debug function
+		nnoremap <leader>bn :BlogNew<CR>
+		nnoremap <leader>bsp :BlogSave publish<CR>
+		nnoremap <leader>bl :BlogList<CR>
 
-"nerd tree toggle
-nnoremap <leader>c<SPACE> :NERDComToggleComment<CR>
+"}}}
+" C {{{
+	"nerd tree toggle
+	nnoremap <leader>c<SPACE> :NERDComToggleComment<CR>
+"}}}
+" D {{{
+	"php die function
+	vnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
+	nnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
+"}}}
+	"echo function
+	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>hpA;<ESC>
+	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
 
-"php die function
-vnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
-nnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
+	" Shortcut to rapidly toggle `set list`
+	nnoremap <leader>l :set list!<CR>
 
-"echo function
-vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>hpA;<ESC>
-vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
+	"show all lines with word under cursor
+	nnoremap <leader>m [I
+	vnoremap <leader>m [I 
 
-" Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
+	" Search forward with f key
+	noremap ,, ;
+	"nerd tree toggle
+	nnoremap <leader>k :ZoomWin<CR>
+	vnoremap <leader>k :ZoomWin<CR>
 
-"show all lines with word under cursor
-nnoremap <leader>m [I
-vnoremap <leader>m [I 
+	"copy to system clipboard
+	vnoremap <leader>y "+y
 
-" Search forward with f key
-noremap ,, ;
-"nerd tree toggle
-nnoremap <leader>k :ZoomWin<CR>
-vnoremap <leader>k :ZoomWin<CR>
+	"set line numbers
+	nnoremap <leader>n :set number!<CR>
 
-"copy to system clipboard
-vnoremap <leader>y "+y
+	"set line numbers
+	nnoremap <leader>nt :NERDTreeToggle<CR>
 
-"set line numbers
-nnoremap <leader>n :set number!<CR>
+	"paste from system clipboard
+	nnoremap <leader>p "+p
+	vnoremap <leader>p "+p
 
-"set line numbers
-nnoremap <leader>nt :NERDTreeToggle<CR>
+	"select a variable
+	nnoremap <leader>v v$
 
-"paste from system clipboard
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
-"select a variable
-nnoremap <leader>ss :set spell!<cr>
+	"save
+	nnoremap <leader>w :w!<CR>
 
-"select a variable
-nnoremap <leader>v v$
 
-"save
-nnoremap <leader>w :w!<CR>
+	"quit
+	nnoremap <leader>q :q!<CR>
+	nnoremap <leader>r :YRShow<CR> 
+	nnoremap <leader>s :source ~/.vimrc<CR>
+	nnoremap <leader>ss :set spell!<cr>
+	nnoremap <leader>t :TlistToggle<CR>
+	nnoremap <leader>u :GundoToggle<CR>
+	"select a variable
+	nnoremap <leader>x :r!xclip -o<cr>
+	vnoremap <leader>x :r!xclip -o<cr>
+	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 
-"quit
-nnoremap <leader>q :q!<CR>
-
-"select a variable
-nnoremap <leader>x :r!xclip -o<cr>
-vnoremap <leader>x :r!xclip -o<cr>
-nnoremap <leader>r :YRShow<CR> 
-nnoremap <leader>s :source ~/.vimrc<CR>
-nnoremap <leader>t :TlistToggle<CR>
-nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
 " FILETYPE SPECIFIC {{{
 "source vim file when saving
