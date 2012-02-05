@@ -2,11 +2,13 @@
 "EMILE SWARTS VIMRC"
 "COLEMAK KEYBOARD LAYOUT"
 """"""""""""""""""""
+"PATHOGEN{{{
 filetype off
 
 "pathogen has to be called before filetype detection
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+"PATHOGEN}}}
 
 "/* Basic set options ----------------------------------------------------------- {{{*/
 set nocompatible
