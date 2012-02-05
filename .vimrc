@@ -50,7 +50,7 @@ set backup                        " enable backups
 set listchars=tab:▸\ ,eol:❤
 let mapleader = ","
 "/* Basic options ----------------------------------------------------------- }}}*/
-
+" PLUGINS {{{
 let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
 let g:EasyMotion_do_shade = 1
@@ -59,6 +59,7 @@ let g:EasyMotion_do_shade = 1
 let Tlist_Use_Right_Window=1
 let Tlist_Show_One_File=1
 
+"}}}
 " COLORS {{{
 filetype plugin on
 
@@ -67,9 +68,7 @@ let g:zenburn_high_Contrast=1
 let g:molokai_original=1
 colorscheme molokai
 "}}}
-
 syntax on
-
 "REMAP KEYS{{{
 " Use sane regexes.
 nnoremap / /\v
@@ -104,16 +103,12 @@ noremap k gk
 " to them.
 nnoremap n nzzzv:call PulseCursorLine()<cr>
 nnoremap N Nzzzv:call PulseCursorLine()<cr>
+cnoremap w!! w !sudo tee % >/dev/null
 "}}}
 " LEADER REMAP KEYS{{{
 noremap <leader><space> :noh<cr> :call clearmatches<cr>
 "}}}
-nnoremap n nzzzv
-nnoremap N Nzzzv
 
-"show all lines with word under cursor
-nnoremap <leader>m [I
-vnoremap <leader>m [I 
 
 
 "source vim file when saving
@@ -121,7 +116,6 @@ if has("autocmd")
  autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-cnoremap w!! w !sudo tee % >/dev/null
 
 "FATBEEHIVE bk_debug function
 vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
@@ -147,6 +141,10 @@ vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
+
+"show all lines with word under cursor
+nnoremap <leader>m [I
+vnoremap <leader>m [I 
 
 " Search forward with f key
 noremap ,, ;
