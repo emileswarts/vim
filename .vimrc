@@ -90,6 +90,14 @@ let g:EasyMotion_mapping_W = '<leader>eW'
 let g:EasyMotion_mapping_e = '<leader>ee'
 let g:EasyMotion_mapping_k = '<leader>ek'
 let g:EasyMotion_mapping_j = '<leader>ej'
+"DB
+let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:passwd=corpse:driver=mysql'
+let g:dbext_default_buffer_lines = 15
+let  g:dbext_default_DBI_orientation = 'vertical'
+
+let g:window_use_horiz = 0
+let g:window_use_bottom = 0
+let g:window_use_right = 1
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -98,6 +106,10 @@ set t_Co=256
 let g:zenburn_high_Contrast=1
 let g:molokai_original=1
 colorscheme molokai
+ 
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 "}}}
 syntax on
 "REMAP KEYS{{{
@@ -152,6 +164,12 @@ inoremap <c-d> <esc>ddi
 "scroll down
 nnoremap <SPACE> 10j
 vmap <SPACE> 10j
+
+"switching between windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 "}}}
 " LEADER REMAP KEYS{{{
 noremap <leader><space> :noh<cr> :call clearmatches<cr>
@@ -221,28 +239,13 @@ nnoremap <leader>r :YRShow<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
 nnoremap <leader>t :TlistToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
-
+" FILETYPE SPECIFIC {{{
 "source vim file when saving
 if has("autocmd")
  autocmd bufwritepost .vimrc source $MYVIMRC
 endif
-
- 
-"Invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-
-"switching between windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-"change case of current word in insert mode
-"nnoremap <C-U> gUiw
-"inoremap <C-U> <esc>gUiwea
-
 au BufRead *.php set ft=php.html
 au BufNewFile *.php set ft=php.html
 
@@ -258,15 +261,9 @@ augroup ft_vim
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
 
-nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
+"}}}
 
-let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:passwd=corpse:driver=mysql'
-let g:dbext_default_buffer_lines = 15
-let  g:dbext_default_DBI_orientation = 'vertical'
 
-let g:window_use_horiz = 0
-let g:window_use_bottom = 0
-let g:window_use_right = 1
 
 silent !echo -ne "]12;\#dd4010\x7"
 
