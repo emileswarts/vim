@@ -107,16 +107,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 "}}}
 " LEADER REMAP KEYS{{{
 noremap <leader><space> :noh<cr> :call clearmatches<cr>
-"}}}
-
-
-
-"source vim file when saving
-if has("autocmd")
- autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
-
 "FATBEEHIVE bk_debug function
 vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
 vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
@@ -148,6 +138,14 @@ vnoremap <leader>m [I
 
 " Search forward with f key
 noremap ,, ;
+"}}}
+
+"source vim file when saving
+if has("autocmd")
+ autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+
 
 map <tab> %
 
