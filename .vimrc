@@ -110,6 +110,32 @@ colorscheme molokai
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+silent !echo -ne "]12;\#dd4010\x7"
+
+let &t_SI="]12;\#89b6e2\x7"
+let &t_EI="]12;\#dd4010\x7"
+
+au VimLeave * silent !echo -ne "]12;\#dd4010\x7"
+au BufNewFile,BufRead /etc/httpd/* setf apache  
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 "}}}
 syntax on
 "REMAP KEYS{{{
@@ -262,46 +288,15 @@ augroup ft_vim
 augroup END
 
 "}}}
-
-
-
-silent !echo -ne "]12;\#dd4010\x7"
-
-let &t_SI="]12;\#89b6e2\x7"
-let &t_EI="]12;\#dd4010\x7"
-
-au VimLeave * silent !echo -ne "]12;\#dd4010\x7"
-au BufNewFile,BufRead /etc/httpd/* setf apache  
-
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
 let g:rbpt_max = 16
-
-"ABBREVIATIONS
+" ABBREVIATIONS {{{
 iabbrev ldis ಠ_ಠ
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
 iabbrev ecoh echo
-
+"}}}
 function! EatChar(pat)
     let c = nr2char(getchar(0))
     return (c =~ a:pat) ? '' : c
