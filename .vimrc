@@ -9,7 +9,6 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 "PATHOGEN}}}
-
 "/* Basic set options ----------------------------------------------------------- {{{*/
 set nocompatible
 set encoding=utf-8
@@ -70,17 +69,10 @@ colorscheme molokai
 
 syntax on
 
-map <tab> %
-
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
+"REMAP KEYS{{{
 " Use sane regexes.
 nnoremap / /\v
 vnoremap / /\v
-
-noremap <leader><space> :noh<cr> :call clearmatches<cr>
-
 "Bubble single lines
 nnoremap <C-UP> ddkP
 nnoremap <C-Down> ddp
@@ -88,11 +80,7 @@ nnoremap ' `
 nnoremap ` ' 
 "noremap ; :s/\([^;]\)$/\1;/<CR>
 noremap ; <esc>A;<esc>
-
-"show all lines with word under cursor
-nnoremap <leader>m [I
-vnoremap <leader>m [I 
-
+map <tab> %
 "Bubble multiple lines - cool
 vmap <C-k> xkPz[V`]
 vmap <C-j> xp`[V`]
@@ -115,6 +103,17 @@ noremap k gk
 " to them.
 nnoremap n nzzzv:call PulseCursorLine()<cr>
 nnoremap N Nzzzv:call PulseCursorLine()<cr>
+"}}}
+" LEADER REMAP KEYS{{{
+noremap <leader><space> :noh<cr> :call clearmatches<cr>
+"}}}
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+"show all lines with word under cursor
+nnoremap <leader>m [I
+vnoremap <leader>m [I 
+
 
 "source vim file when saving
 if has("autocmd")
