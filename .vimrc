@@ -135,6 +135,23 @@ noremap k gk
 nnoremap n nzzzv:call PulseCursorLine()<cr>
 nnoremap N Nzzzv:call PulseCursorLine()<cr>
 cnoremap w!! w !sudo tee % >/dev/null
+map <tab> %
+
+"easy to reach keys
+noremap H ^
+
+nnoremap S i<cr><esc><right>
+
+
+"Create space underneath line
+nnoremap - mz<esc>o<esc>'z
+"Create space above line
+nnoremap _ mz<esc>O<esc>'z
+inoremap <c-d> <esc>ddi
+
+"scroll down
+nnoremap <SPACE> 10j
+vmap <SPACE> 10j
 "}}}
 " LEADER REMAP KEYS{{{
 noremap <leader><space> :noh<cr> :call clearmatches<cr>
@@ -173,34 +190,6 @@ noremap ,, ;
 nnoremap <leader>k :ZoomWin<CR>
 vnoremap <leader>k :ZoomWin<CR>
 
-"select a variable
-nnoremap <leader>ss :set spell!<cr>
-
-"select a variable
-nnoremap <leader>v v$
-
-"save
-nnoremap <leader>w :w!<CR>
-
-"select a variable
-nnoremap <leader>x :r!xclip -o<cr>
-vnoremap <leader>x :r!xclip -o<cr>
-"}}}
-
-"source vim file when saving
-if has("autocmd")
- autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
-
-
-map <tab> %
-
-
-"easy to reach keys
-noremap H ^
-
-
 "copy to system clipboard
 vnoremap <leader>y "+y
 
@@ -213,24 +202,32 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 "paste from system clipboard
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
-nnoremap S i<cr><esc><right>
+"select a variable
+nnoremap <leader>ss :set spell!<cr>
+
+"select a variable
+nnoremap <leader>v v$
+
+"save
+nnoremap <leader>w :w!<CR>
 
 "quit
 nnoremap <leader>q :q!<CR>
 
-"Create space underneath line
-nnoremap - mz<esc>o<esc>'z
-"Create space above line
-nnoremap _ mz<esc>O<esc>'z
+"select a variable
+nnoremap <leader>x :r!xclip -o<cr>
+vnoremap <leader>x :r!xclip -o<cr>
 nnoremap <leader>r :YRShow<CR> 
 nnoremap <leader>s :source ~/.vimrc<CR>
 nnoremap <leader>t :TlistToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-inoremap <c-d> <esc>ddi
+"}}}
 
-"scroll down
-nnoremap <SPACE> 10j
-vmap <SPACE> 10j
+"source vim file when saving
+if has("autocmd")
+ autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
