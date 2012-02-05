@@ -1,7 +1,7 @@
-""""""""""""""""""""
+"WELCOME{{{
 "EMILE SWARTS VIMRC"
 "COLEMAK KEYBOARD LAYOUT"
-""""""""""""""""""""
+"""""""""""""""""""""}}}
 "PATHOGEN{{{
 filetype off
 
