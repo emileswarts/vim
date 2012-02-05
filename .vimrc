@@ -306,12 +306,6 @@ endfunction
 function! MakeSpacelessIabbrev(from, to)
     execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 endfunction
-"}}}
-
-
-call MakeSpacelessIabbrev('d', '$')
-call MakeSpacelessIabbrev('pnd', '£')
-
 function! PulseCursorLine()
     let current_window = winnr()
 
@@ -359,7 +353,12 @@ function! PulseCursorLine()
     windo set cursorline
     execute current_window . 'wincmd w'
 endfunction
+"}}}
 
+call MakeSpacelessIabbrev('d', '$')
+call MakeSpacelessIabbrev('pnd', '£')
+
+" STATUS LINE {{{
 "statusline setup
 set statusline=%f "path to filename
 
@@ -397,7 +396,7 @@ set statusline+=%c, "cursor column
 set statusline+=%l/%L "cursor line/total lines
 set statusline+=\ %P "percent through file
 set laststatus=2
-
+"}}}
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
