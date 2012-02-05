@@ -2,14 +2,14 @@
 "EMILE SWARTS VIMRC"
 "COLEMAK KEYBOARD LAYOUT"
 """"""""""""""""""""
-
 filetype off
 
 "pathogen has to be called before filetype detection
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" Basic options ----------------------------------------------------------- {{{
+"/* Basic set options ----------------------------------------------------------- {{{*/
+set nocompatible
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -21,7 +21,6 @@ set cursorline
 set lazyredraw
 set shell=/bin/bash
 set virtualedit=all
-set nocompatible
 set autoindent
 set smartindent
 set smartcase
@@ -35,6 +34,7 @@ set wrapmargin=150
 set history=1000
 set dictionary=/usr/share/dict/words
 set autoread
+"/* Basic options ----------------------------------------------------------- }}}*/
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 "dont show hidden characers when file opens
@@ -254,6 +254,14 @@ au BufNewFile *.php set ft=php.html
 "php cheat for tags
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
 let g:user_zen_leader_key = '<c-y>'
+
+augroup ft_vim
+    au!
+
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
 
 nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 
