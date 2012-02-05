@@ -9,7 +9,7 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 "PATHOGEN}}}
-"/* Basic set options ----------------------------------------------------------- {{{*/
+"BASIC OPTIONS {{{
 set nocompatible
 set encoding=utf-8
 set tabstop=4
@@ -49,7 +49,7 @@ set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 set listchars=tab:▸\ ,eol:❤
 let mapleader = ","
-"/* Basic options ----------------------------------------------------------- }}}*/
+"BASIC OPTIONS----------------------------------------------------------- }}}
 " PLUGINS {{{
 let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
@@ -98,6 +98,19 @@ let  g:dbext_default_DBI_orientation = 'vertical'
 let g:window_use_horiz = 0
 let g:window_use_bottom = 0
 let g:window_use_right = 1
+
+"PHP SYNTAX HIGHLIGHTING
+ let php_sql_query = 1
+ let php_htmlInStrings = 1
+ let php_baselib = 1
+ let php_special_vars = 1
+ let php_special_functions = 1
+ let php_alt_comparisons = 1
+ let php_highlight_quotes = 1
+ let php_show_semicolon = 1
+ let php_smart_semicolon = 1
+ let php_show_semicolon_error = 1
+let g:rbpt_max = 16
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -136,8 +149,8 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
-"}}}
 syntax on
+"}}}
 "REMAP KEYS{{{
 " Use sane regexes.
 nnoremap / /\v
@@ -288,7 +301,6 @@ augroup ft_vim
 augroup END
 
 "}}}
-let g:rbpt_max = 16
 " ABBREVIATIONS {{{
 iabbrev ldis ಠ_ಠ
 iabbrev adn and
@@ -296,6 +308,7 @@ iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
 iabbrev ecoh echo
+
 "}}}
 " FUNCTIONS {{{
 function! EatChar(pat)
@@ -353,52 +366,6 @@ function! PulseCursorLine()
     windo set cursorline
     execute current_window . 'wincmd w'
 endfunction
-"}}}
-
-call MakeSpacelessIabbrev('d', '$')
-call MakeSpacelessIabbrev('pnd', '£')
-
-" STATUS LINE {{{
-"statusline setup
-set statusline=%f "path to filename
-
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h "help file flag
-set statusline+=%y "filetype
-set statusline+=%r "read only flag
-set statusline+=%m "modified flag
-set statusline+=%{fugitive#statusline()}
-
-"display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-set statusline+=%{StatuslineTrailingSpaceWarning()}
-set statusline+=%{StatuslineLongLineWarning()}
-set statusline+=%#warningmsg#
-set statusline+=%*
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-set statusline+=%= "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c, "cursor column
-set statusline+=%l/%L "cursor line/total lines
-set statusline+=\ %P "percent through file
-set laststatus=2
-"}}}
-"recalculate the trailing whitespace warning when idle, and after saving
-autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
 "return '[\s]' if trailing white space is detected
 "return '' otherwise
@@ -521,6 +488,50 @@ function! s:Median(nums)
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
 endfunction
+call MakeSpacelessIabbrev('d', '$')
+call MakeSpacelessIabbrev('pnd', '£')
+
+"}}}
+" STATUS LINE {{{
+"statusline setup
+set statusline=%f "path to filename
+
+"display a warning if fileformat isnt unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+"display a warning if file encoding isnt utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+set statusline+=%h "help file flag
+set statusline+=%y "filetype
+set statusline+=%r "read only flag
+set statusline+=%m "modified flag
+set statusline+=%{fugitive#statusline()}
+
+"display a warning if &et is wrong, or we have mixed-indenting
+set statusline+=%#error#
+set statusline+=%{StatuslineTabWarning()}
+set statusline+=%*
+set statusline+=%{StatuslineTrailingSpaceWarning()}
+set statusline+=%{StatuslineLongLineWarning()}
+set statusline+=%#warningmsg#
+set statusline+=%*
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+set statusline+=%= "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%c, "cursor column
+set statusline+=%l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
+set laststatus=2
+"recalculate the trailing whitespace warning when idle, and after saving
+autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
 augroup ft_statuslinecolor
     au!
@@ -529,14 +540,4 @@ augroup ft_statuslinecolor
     au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
 augroup END
 
-"PHP SYNTAX HIGHLIGHTING
- let php_sql_query = 1
- let php_htmlInStrings = 1
- let php_baselib = 1
- let php_special_vars = 1
- let php_special_functions = 1
- let php_alt_comparisons = 1
- let php_highlight_quotes = 1
- let php_show_semicolon = 1
- let php_smart_semicolon = 1
- let php_show_semicolon_error = 1
+"}}}
