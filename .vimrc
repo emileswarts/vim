@@ -49,6 +49,8 @@
 	set backup                        " enable backups
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
+	" Make Vim able to edit crontab files again.
+	set backupskip=/tmp/*,/private/tmp/*" 
 "}}}
 " PLUGINS {{{
 	let g:yankring_window_use_bottom = 0
