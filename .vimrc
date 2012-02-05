@@ -297,6 +297,7 @@ iabbrev tehn then
 iabbrev teh the
 iabbrev ecoh echo
 "}}}
+" FUNCTIONS {{{
 function! EatChar(pat)
     let c = nr2char(getchar(0))
     return (c =~ a:pat) ? '' : c
@@ -305,6 +306,8 @@ endfunction
 function! MakeSpacelessIabbrev(from, to)
     execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 endfunction
+"}}}
+
 
 call MakeSpacelessIabbrev('d', '$')
 call MakeSpacelessIabbrev('pnd', '£')
