@@ -373,6 +373,13 @@ syntax on
 			au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 		augroup END
 "}}}
+" PENTADACTYL {{{
+	augroup ft_pentadactyl
+		au!
+		au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
+		au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
+	augroup END
+"}}}
 "}}}
 " ABBREVIATIONS {{{
 iabbrev ldis ಠ_ಠ
