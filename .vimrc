@@ -35,7 +35,6 @@ set wrapmargin=150
 set history=1000
 set dictionary=/usr/share/dict/words
 set autoread
-"/* Basic options ----------------------------------------------------------- }}}*/
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 "dont show hidden characers when file opens
@@ -49,9 +48,9 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 set listchars=tab:▸\ ,eol:❤
-" }}}
-
 let mapleader = ","
+"/* Basic options ----------------------------------------------------------- }}}*/
+
 let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
 let g:EasyMotion_do_shade = 1
@@ -60,12 +59,14 @@ let g:EasyMotion_do_shade = 1
 let Tlist_Use_Right_Window=1
 let Tlist_Show_One_File=1
 
+" COLORS {{{
 filetype plugin on
 
 set t_Co=256
 let g:zenburn_high_Contrast=1
 let g:molokai_original=1
 colorscheme molokai
+"}}}
 
 syntax on
 
