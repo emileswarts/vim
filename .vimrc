@@ -65,7 +65,6 @@ let g:ctrlp_cache_dir = $HOME
 let g:ctrlp_dotfiles = 1
 let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*  " Linux/MacOSX
-let g:ctrlp_map = '<leader>m'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_split_window = 0
@@ -213,6 +212,8 @@ map <C-l> <C-w>l
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
+		" Search forward with f key
+		noremap ,, ;
 	"}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
@@ -236,55 +237,74 @@ map <C-l> <C-w>l
 	vnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
 	nnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
 "}}}
+" E {{{
 	"echo function
 	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>hpA;<ESC>
 	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
-
-	" Shortcut to rapidly toggle `set list`
-	nnoremap <leader>l :set list!<CR>
-
-	"show all lines with word under cursor
-	nnoremap <leader>m [I
-	vnoremap <leader>m [I 
-
-	" Search forward with f key
-	noremap ,, ;
+"}}}
+" K {{{
 	"nerd tree toggle
 	nnoremap <leader>k :ZoomWin<CR>
 	vnoremap <leader>k :ZoomWin<CR>
-
-	"copy to system clipboard
-	vnoremap <leader>y "+y
-
+"}}}
+" L {{{
+	" Shortcut to rapidly toggle `set list`
+	nnoremap <leader>l :set list!<CR>
+"}}}
+" M {{{
+	"show all lines with word under cursor
+	nnoremap <leader>m [I
+	vnoremap <leader>m [I 
+	let g:ctrlp_map = '<leader>m'
+"}}}
+" N {{{
 	"set line numbers
 	nnoremap <leader>n :set number!<CR>
 
 	"set line numbers
 	nnoremap <leader>nt :NERDTreeToggle<CR>
-
+"}}}
+" P {{{
 	"paste from system clipboard
 	nnoremap <leader>p "+p
 	vnoremap <leader>p "+p
-
-	"select a variable
-	nnoremap <leader>v v$
-
-	"save
-	nnoremap <leader>w :w!<CR>
-
-
+"}}}
+" Q {{{
 	"quit
 	nnoremap <leader>q :q!<CR>
+"}}}
+" R {{{
 	nnoremap <leader>r :YRShow<CR> 
+"}}}
+" S {{{
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
+"}}}
+" T {{{
 	nnoremap <leader>t :TlistToggle<CR>
+"}}}
+" U {{{
 	nnoremap <leader>u :GundoToggle<CR>
+"}}}
+" V {{{
 	"select a variable
+	nnoremap <leader>v v$
+"}}}
+" W {{{
+	"save
+	nnoremap <leader>w :w!<CR>
+"}}}
+" X {{{
 	nnoremap <leader>x :r!xclip -o<cr>
 	vnoremap <leader>x :r!xclip -o<cr>
+"}}}
+" Y {{{
+	"copy to system clipboard
+	vnoremap <leader>y "+y
+"}}}
+" Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
-
+"}}}
 "}}}
 " FILETYPE SPECIFIC {{{
 "source vim file when saving
