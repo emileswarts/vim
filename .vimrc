@@ -212,6 +212,8 @@ syntax on
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+    " Open a Quickfix window for the last search.
+	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
