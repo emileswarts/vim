@@ -252,7 +252,7 @@ syntax on
 	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
 "}}}
 " G {{{
-	nnoremap <leader>g :Gist -la<CR>
+	nnoremap <leader>g :Gist -l emileswarts<CR>
 
 "}}}
 " K {{{
