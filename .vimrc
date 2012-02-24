@@ -53,65 +53,68 @@
 	set backupskip=/tmp/*,/private/tmp/*" 
 "}}}
 " PLUGINS {{{
-	let g:yankring_window_use_bottom = 0
-	let g:yankring_window_height = 15
-	let g:EasyMotion_do_shade = 1
-
-	"Taglist
-	let Tlist_Use_Right_Window=1
-	let Tlist_Show_One_File=1
-
-	let g:ctrlp_use_caching = 1
-	let g:ctrlp_clear_cache_on_exit = 0 
-	let g:ctrlp_cache_dir = $HOME
-	let g:ctrlp_dotfiles = 1
-	let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*'
-	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*  " Linux/MacOSX
-	let g:ctrlp_working_path_mode = 0
-	let g:ctrlp_match_window_reversed = 1
-	let g:ctrlp_split_window = 0
-	let g:ctrlp_prompt_mappings = {
-	\ 'PrtSelectMove("j")':   ['<c-j>', '<down>', '<s-tab>'],
-	\ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
-	\ 'PrtHistory(-1)':       ['<c-n>'],
-	\ 'PrtHistory(1)':        ['<c-p>'],
-	\ 'ToggleFocus()':        ['<c-tab>'],
-	\ }
-
-	"EASY MOTION
-	let g:EasyMotion_mapping_f = '<leader>ef'
-	let g:EasyMotion_mapping_F = '<leader>eF'
-	let g:EasyMotion_mapping_T = '<leader>eT'
-	let g:EasyMotion_mapping_t = '<leader>et'
-	let g:EasyMotion_mapping_b = '<leader>eb'
-	let g:EasyMotion_mapping_B = '<leader>eB'
-	let g:EasyMotion_mapping_E = '<leader>eE'
-	let g:EasyMotion_mapping_w = '<leader>ew'
-	let g:EasyMotion_mapping_W = '<leader>eW'
-	let g:EasyMotion_mapping_e = '<leader>ee'
-	let g:EasyMotion_mapping_k = '<leader>ek'
-	let g:EasyMotion_mapping_j = '<leader>ej'
-	"DB
-	let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:passwd=corpse:driver=mysql'
-	let g:dbext_default_buffer_lines = 15
-	let  g:dbext_default_DBI_orientation = 'vertical'
-
-	let g:window_use_horiz = 0
-	let g:window_use_bottom = 0
-	let g:window_use_right = 1
-
-	"PHP SYNTAX HIGHLIGHTING
-	 let php_sql_query = 1
-	 let php_htmlInStrings = 1
-	 let php_baselib = 1
-	 let php_special_vars = 1
-	 let php_special_functions = 1
-	 let php_alt_comparisons = 1
-	 let php_highlight_quotes = 1
-	 let php_show_semicolon = 1
-	 let php_smart_semicolon = 1
-	 let php_show_semicolon_error = 1
-	let g:rbpt_max = 16
+	" CTRLP {{{
+		let g:ctrlp_use_caching = 1
+		let g:ctrlp_clear_cache_on_exit = 0 
+		let g:ctrlp_cache_dir = $HOME
+		let g:ctrlp_dotfiles = 1
+		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*'
+		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*  " Linux/MacOSX
+		let g:ctrlp_working_path_mode = 0
+		let g:ctrlp_match_window_reversed = 1
+		let g:ctrlp_split_window = 0
+		let g:ctrlp_prompt_mappings = {
+		\ 'PrtSelectMove("j")':   ['<c-j>', '<down>', '<s-tab>'],
+		\ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
+		\ 'PrtHistory(-1)':       ['<c-n>'],
+		\ 'PrtHistory(1)':        ['<c-p>'],
+		\ 'ToggleFocus()':        ['<c-tab>'],
+		\ }
+	"}}}
+	" Db {{{
+		let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:passwd=corpse:driver=mysql'
+		let g:dbext_default_buffer_lines = 15
+		let g:dbext_default_DBI_orientation = 'vertical'
+		let g:window_use_horiz = 0
+		let g:window_use_bottom = 0
+		let g:window_use_right = 1
+	"}}}
+	" EasyMotion {{{
+		let g:EasyMotion_do_shade = 1
+		let g:EasyMotion_mapping_f = '<leader>ef'
+		let g:EasyMotion_mapping_F = '<leader>eF'
+		let g:EasyMotion_mapping_T = '<leader>eT'
+		let g:EasyMotion_mapping_t = '<leader>et'
+		let g:EasyMotion_mapping_b = '<leader>eb'
+		let g:EasyMotion_mapping_B = '<leader>eB'
+		let g:EasyMotion_mapping_E = '<leader>eE'
+		let g:EasyMotion_mapping_w = '<leader>ew'
+		let g:EasyMotion_mapping_W = '<leader>eW'
+		let g:EasyMotion_mapping_e = '<leader>ee'
+		let g:EasyMotion_mapping_k = '<leader>ek'
+		let g:EasyMotion_mapping_j = '<leader>ej'
+	"}}}
+	" PHP {{{
+		let php_sql_query = 1
+		let php_htmlInStrings = 1
+		let php_baselib = 1
+		let php_special_vars = 1
+		let php_special_functions = 1
+		let php_alt_comparisons = 1
+		let php_highlight_quotes = 1
+		let php_show_semicolon = 1
+		let php_smart_semicolon = 1
+		let php_show_semicolon_error = 1
+		let g:rbpt_max = 16
+	"}}}
+	" Taglist {{{
+		let Tlist_Use_Right_Window=1
+		let Tlist_Show_One_File=1
+	"}}}
+	" Yankring {{{
+		let g:yankring_window_use_bottom = 0
+		let g:yankring_window_height = 15
+	"}}}
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -247,6 +250,10 @@ syntax on
 	"echo function
 	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>hpA;<ESC>
 	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
+"}}}
+" G {{{
+	nnoremap <leader>g :Gist -la<CR>
+
 "}}}
 " K {{{
 	"nerd tree toggle
