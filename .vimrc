@@ -223,7 +223,11 @@ syntax on
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
 		" Search forward with f key
 		noremap ,, ;
+		nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR> 
 	"}}}
+	" A {{{
+
+"}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
 		vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
@@ -254,6 +258,12 @@ syntax on
 " G {{{
 	nnoremap <leader>g :Gist -l emileswarts<CR>
 
+"}}}
+" H {{{
+	nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+	nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+	nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+	nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 "}}}
 " K {{{
 	"nerd tree toggle
