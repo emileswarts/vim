@@ -27,6 +27,9 @@ else
 endif
 
 
+hi InterestingWord1 guifg=#000000 guibg=#FFA700
+hi InterestingWord2 guifg=#000000 guibg=#53FF00
+hi InterestingWord3 guifg=#000000 guibg=#FF74F8
 hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
 hi Number          guifg=#AE81FF
@@ -95,9 +98,6 @@ hi Structure       guifg=#66D9EF
 hi Tag             guifg=#F92672               gui=italic
 hi Title           guifg=#ef5939
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
-hi InterestingWord1 guifg=#000000 guibg=#FFA700
-hi InterestingWord2 guifg=#000000 guibg=#53FF00
-hi InterestingWord3 guifg=#000000 guibg=#FF74F8
 
 hi Typedef         guifg=#66D9EF
 hi Type            guifg=#66D9EF               gui=none
