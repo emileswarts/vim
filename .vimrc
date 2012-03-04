@@ -49,6 +49,7 @@
 	set backup                        " enable backups
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
+	let maplocalleader = "\\"
 	" Make Vim able to edit crontab files again.
 	set backupskip=/tmp/*,/private/tmp/*" 
 "}}}
@@ -226,7 +227,7 @@ syntax on
 		nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR> 
 	"}}}
 	" A {{{
-
+	nnoremap <leader>a :Ack! 
 "}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
@@ -328,6 +329,39 @@ syntax on
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
+"}}}
+"LOCAL LEADER FUNCTIONS {{{
+ 
+" Motions to Ack for things.  Works with pretty much everything, including:
+"
+"   w, W, e, E, b, B, t*, f*, i*, a*, and custom text objects
+"
+" Awesome.
+"
+" Note: If the text covered by a motion contains a newline it won't work.  Ack
+" searches line-by-line.
+
+nnoremap <silent> \a :set opfunc=<SID>AckMotion<CR>g@
+xnoremap <silent> \a :<C-U>call <SID>AckMotion(visualmode())<CR>
+
+function! s:CopyMotionForType(type)
+    if a:type ==# 'v'
+        silent execute "normal! `<" . a:type . "`>y"
+    elseif a:type ==# 'char'
+        silent execute "normal! `[v`]y"
+    endif
+endfunction
+
+function! s:AckMotion(type) abort
+    let reg_save = @@
+
+    call s:CopyMotionForType(a:type)
+
+    execute "normal! :Ack! --literal " . shellescape(@@) . "\<cr>"
+
+    let @@ = reg_save
+endfunction
+  
 "}}}
 " FILETYPE SPECIFIC {{{
 " ALL {{{

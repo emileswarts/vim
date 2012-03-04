@@ -61,7 +61,7 @@ endif
 "
 nmap <Plug>ToggleAutoCloseMappings :call <SID>ToggleAutoCloseMappings()<CR>
 if (!hasmapto( '<Plug>ToggleAutoCloseMappings', 'n' ))
-    nmap <unique> <Leader>a <Plug>ToggleAutoCloseMappings
+    nmap <unique> <F1> <Plug>ToggleAutoCloseMappings
 endif
 fun <SID>ToggleAutoCloseMappings() " --- {{{2
     if g:autoclose_on
