@@ -227,7 +227,18 @@ syntax on
 		nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR> 
 	"}}}
 	" A {{{
-	nnoremap <leader>a :Ack! 
+	"nnoremap <leader>a :Ack! 
+	" Motions to Ack for things.  Works with pretty much everything, including:
+	"
+	"   w, W, e, E, b, B, t*, f*, i*, a*, and custom text objects
+	"
+	" Awesome.
+	"
+	" Note: If the text covered by a motion contains a newline it won't work.  Ack
+	" searches line-by-line.
+
+	nnoremap <silent> <leader>a :set opfunc=<SID>AckMotion<CR>g@
+	xnoremap <silent> <leader>a :<C-U>call <SID>AckMotion(visualmode())<CR>
 "}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
@@ -332,36 +343,6 @@ syntax on
 "}}}
 "LOCAL LEADER FUNCTIONS {{{
  
-" Motions to Ack for things.  Works with pretty much everything, including:
-"
-"   w, W, e, E, b, B, t*, f*, i*, a*, and custom text objects
-"
-" Awesome.
-"
-" Note: If the text covered by a motion contains a newline it won't work.  Ack
-" searches line-by-line.
-
-nnoremap <silent> \a :set opfunc=<SID>AckMotion<CR>g@
-xnoremap <silent> \a :<C-U>call <SID>AckMotion(visualmode())<CR>
-
-function! s:CopyMotionForType(type)
-    if a:type ==# 'v'
-        silent execute "normal! `<" . a:type . "`>y"
-    elseif a:type ==# 'char'
-        silent execute "normal! `[v`]y"
-    endif
-endfunction
-
-function! s:AckMotion(type) abort
-    let reg_save = @@
-
-    call s:CopyMotionForType(a:type)
-
-    execute "normal! :Ack! --literal " . shellescape(@@) . "\<cr>"
-
-    let @@ = reg_save
-endfunction
-  
 "}}}
 " FILETYPE SPECIFIC {{{
 " ALL {{{
@@ -497,7 +478,26 @@ iabbrev ecoh echo
 		windo set cursorline
 		execute current_window . 'wincmd w'
 	endfunction
+  
 
+	function! s:CopyMotionForType(type)
+		if a:type ==# 'v'
+			silent execute "normal! `<" . a:type . "`>y"
+		elseif a:type ==# 'char'
+			silent execute "normal! `[v`]y"
+		endif
+	endfunction
+
+	function! s:AckMotion(type) abort
+		let reg_save = @@
+
+		call s:CopyMotionForType(a:type)
+
+		execute "normal! :Ack! --literal " . shellescape(@@) . "\<cr>"
+
+		let @@ = reg_save
+	endfunction
+ 
 	"return '[\s]' if trailing white space is detected
 	"return '' otherwise
 	function! StatuslineTrailingSpaceWarning()
