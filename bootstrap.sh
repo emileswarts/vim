@@ -24,7 +24,7 @@ removeSymlinkedDotfiles() {
 relinkSymlinkDotfiles() {
 	for file in `ls -a ~/dotfiles | grep -v '^\.\.$' |grep -v '^\.$' | grep -v '^README$' |grep -v '^compiz-settings.profile$' |grep -v '^gnome-terminal-conf.xml$' |grep -v '^bootstrap.sh$'` 
 	do
-		echo "ln -S ~/$file ~/dotfiles/$file"
+		echo "ln -s ~/$file ~/dotfiles/$file"
 	done
 }
 
