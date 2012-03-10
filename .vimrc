@@ -253,7 +253,7 @@ syntax on
 "}}}
 " E {{{
 	"echo function
-	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>hpA;<ESC>
+	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
 	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
 "}}}
 " G {{{
