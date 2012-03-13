@@ -264,8 +264,8 @@ syntax on
 "}}}
 " E {{{
 	"echo function
-	vnoremap <leader>es yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
-	vnoremap <leader>e yo<ESC>iecho<SPACE><ESC>pA;<ESC>
+	vnoremap <leader>e yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
+	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 "}}}
 " G {{{
 	nnoremap <leader>g :Gist -l emileswarts<CR>
