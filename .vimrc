@@ -268,7 +268,7 @@ syntax on
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 "}}}
 " G {{{
-	nnoremap <leader>g :Gist -l emileswarts<CR>
+	nnoremap <leader>g :Gist -la<CR>
 
 "}}}
 " H {{{
