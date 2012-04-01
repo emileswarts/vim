@@ -266,6 +266,7 @@ syntax on
 	"echo function
 	vnoremap <leader>e yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
+	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
@@ -330,8 +331,6 @@ syntax on
 	nnoremap <leader>w :w!<CR>
 "}}}
 " X {{{
-	nnoremap <leader>x :r!xclip -o<cr>
-	vnoremap <leader>x :r!xclip -o<cr>
 "}}}
 " Y {{{
 	"copy to system clipboard
