@@ -256,6 +256,7 @@ syntax on
 " C {{{
 	"nerd tree toggle
 	nnoremap <leader>c<SPACE> :NERDComToggleComment<CR>
+	nnoremap <leader>! :Clam<space>
 "}}}
 " D {{{
 	"php die function
