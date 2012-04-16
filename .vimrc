@@ -188,6 +188,9 @@ syntax on
 	 
 	noremap j gj
 	noremap k gk
+	noremap n nzz
+	noremap N Nzz
+	noremap * *zz
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
