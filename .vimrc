@@ -45,7 +45,6 @@
 	set noswapfile
 	set undodir=~/.vim/tmp/undo//     " undo files
 	set nobackup "no backups
-	set backup                        " enable backups
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
 	let maplocalleader = "\\"
