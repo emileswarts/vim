@@ -418,7 +418,6 @@ syntax on
 		so ~/.vim/secure.vim
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
-		au BufNewFile,BufRead *.sql colorscheme vibrantink
 	augroup END
 " }}}
 
