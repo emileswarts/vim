@@ -10,7 +10,6 @@
 	call pathogen#helptags()
 "}}}
 " SECURE STUFF {{{
-	so ~/.vim/secure.vim
 
 "}}}
 "BASIC OPTIONS {{{
@@ -416,6 +415,7 @@ syntax on
 
 " MYSQL {{{
 	augroup ft_sql
+		so ~/.vim/secure.vim
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
 		au BufNewFile,BufRead *.sql colorscheme vibrantink
