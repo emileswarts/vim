@@ -9,6 +9,9 @@
 	call pathogen#runtime_append_all_bundles()
 	call pathogen#helptags()
 "}}}
+" SECURE STUFF {{{
+
+"}}}
 "BASIC OPTIONS {{{
 	set nocompatible
 	set encoding=utf-8
@@ -412,6 +415,7 @@ syntax on
 
 " MYSQL {{{
 	augroup ft_sql
+		so ~/.vim/secure.vim
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
 		au BufNewFile,BufRead *.sql colorscheme vibrantink
