@@ -406,6 +406,15 @@ syntax on
 			au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 		augroup END
 "}}}
+
+" MYSQL {{{
+	augroup ft_sql
+		au!
+		au BufNewFile,BufRead *.sql set filetype=sql
+		au BufNewFile,BufRead *.sql colorscheme camo
+	augroup END
+" }}}
+
 " PENTADACTYL {{{
 	augroup ft_pentadactyl
 		au!
