@@ -9,6 +9,10 @@
 	call pathogen#runtime_append_all_bundles()
 	call pathogen#helptags()
 "}}}
+" SECURE STUFF {{{
+	so ~/.vim/secure.vim
+
+"}}}
 "BASIC OPTIONS {{{
 	set nocompatible
 	set encoding=utf-8
