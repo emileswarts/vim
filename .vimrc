@@ -194,6 +194,7 @@ syntax on
 	noremap k gk
 	noremap n nzz
 	noremap N Nzz
+	noremap U <C-R>
 	noremap * *zz
 
 	" Keep search matches in the middle of the window and pulse the line when moving
