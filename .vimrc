@@ -190,8 +190,8 @@ syntax on
 	"change behaviour of k to *
 	noremap K *
 	 
-	noremap j gj
-	noremap k gk
+	noremap j gjzz
+	noremap k gkzz
 	noremap n nzz
 	noremap N Nzz
 	noremap U <C-R>
