@@ -191,8 +191,8 @@ syntax on
 	"change behaviour of k to *
 	noremap K *
 	 
-	noremap j gjzz
-	noremap k gkzz
+	noremap j gj
+	noremap k gk
 	noremap n nzz
 	noremap N Nzz
 	noremap U <C-R>
@@ -432,7 +432,6 @@ syntax on
 "}}}
 "}}}
 " ABBREVIATIONS {{{
-iabbrev ldis ಠ_ಠ
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
