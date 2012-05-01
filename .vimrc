@@ -22,6 +22,7 @@
 	set ruler
 	set incsearch
 	set cursorline
+	set cursorcolumn
 	set lazyredraw
 	set shell=/bin/bash
 	set virtualedit=all
