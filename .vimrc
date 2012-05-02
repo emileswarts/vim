@@ -22,6 +22,7 @@
 	set ruler
 	set incsearch
 	set cursorline
+	set cursorcolumn
 	set lazyredraw
 	set shell=/bin/bash
 	set virtualedit=all
@@ -191,6 +192,7 @@ syntax on
 	noremap k gk
 	noremap n nzz
 	noremap N Nzz
+	noremap U <C-R>
 	noremap * *zz
 
 	" Keep search matches in the middle of the window and pulse the line when moving
@@ -427,7 +429,6 @@ syntax on
 "}}}
 "}}}
 " ABBREVIATIONS {{{
-iabbrev ldis ಠ_ಠ
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
