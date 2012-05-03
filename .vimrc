@@ -361,23 +361,6 @@ syntax on
 	 autocmd bufwritepost .vimrc source $MYVIMRC
 	endif
 "}}}
-" PHP {{{
-
-	au BufRead *.php set ft=php.html
-	au BufNewFile *.php set ft=php.html
-	"php cheat for tags
-	autocmd FileType php let b:surround_45 = "<?php \r ?>"
-	let g:user_zen_leader_key = '<c-y>'
-"}}}
-" VIM {{{
-	augroup ft_vim
-		au!
-
-		au FileType vim setlocal foldmethod=marker
-		au FileType help setlocal textwidth=78
-		au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
-	augroup END
-"}}}
 " CSS {{{
 	 augroup ft_css
 		au!
@@ -415,7 +398,6 @@ syntax on
 			au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 		augroup END
 "}}}
-
 " MYSQL {{{
 	augroup ft_sql
 		so ~/.vim/secure.vim
@@ -423,12 +405,21 @@ syntax on
 		au BufNewFile,BufRead *.sql set filetype=sql
 	augroup END
 " }}}
+" PHP {{{
 
-" PENTADACTYL {{{
-	augroup ft_pentadactyl
+	au BufRead *.php set ft=php.html
+	au BufNewFile *.php set ft=php.html
+	"php cheat for tags
+	autocmd FileType php let b:surround_45 = "<?php \r ?>"
+	let g:user_zen_leader_key = '<c-y>'
+"}}}
+" VIM {{{
+	augroup ft_vim
 		au!
-		au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
-		au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
+
+		au FileType vim setlocal foldmethod=marker
+		au FileType help setlocal textwidth=78
+		au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 	augroup END
 "}}}
 "}}}
