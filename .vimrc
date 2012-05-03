@@ -55,6 +55,7 @@
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
 	let maplocalleader = "\\"
+	filetype indent on
 	" Make Vim able to edit crontab files again.
 	set backupskip=/tmp/*,/private/tmp/*" 
 "}}}
