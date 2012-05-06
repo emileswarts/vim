@@ -49,9 +49,6 @@
 	set noswapfile
 	set undodir=~/.vim/tmp/undo//     " undo files
 	set nobackup "no backups
-	set guioptions -=m "remove menu bar
-	set guioptions -=T "remove toolbar
-	set guioptions -=r "remove scrollbar
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
 	let maplocalleader = "\\"
