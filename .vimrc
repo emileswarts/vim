@@ -360,6 +360,7 @@ syntax on
 "}}}
 " CSS {{{
 	 augroup ft_css
+		nnoremap <leader>i 0f;i !important<ESC>0 
 		au!
 
 		au BufNewFile,BufRead *.less setlocal filetype=less
@@ -373,7 +374,7 @@ syntax on
 
 		" Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
 		" positioned inside of them AND the following code doesn't get unfolded.
-			au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
+		au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 		augroup END
 "}}}
 " HTML {{{
