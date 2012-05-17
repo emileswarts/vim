@@ -267,8 +267,8 @@ syntax on
 "}}}
 " D {{{
 	"php die function
-	vnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
-	nnoremap <leader>d yo<ESC>idie(<ESC>hpA;<ESC>
+	vnoremap <leader>d "_dd
+	nnoremap <leader>d "_dd
 "}}}
 " E {{{
 	"echo function
