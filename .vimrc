@@ -395,6 +395,9 @@ syntax on
 	autocmd FileType php let b:surround_45 = "<?php \r ?>"
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
+" TWIG {{{
+ au BufNewFile,BufRead *.twig set filetype=twig
+"}}}
 " VIM {{{
 	augroup ft_vim
 		au!
