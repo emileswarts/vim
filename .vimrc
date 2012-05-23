@@ -205,6 +205,7 @@ syntax on
 
 	"easy to reach keys
 	noremap H ^
+	noremap L $
 
 	nnoremap S i<cr><esc><right>
 
