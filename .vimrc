@@ -181,6 +181,9 @@ syntax on
 	"escape to normal mode
 	inoremap hh <ESC>
 
+	"find next occurrence of f or t
+	nnoremap e ;
+
 	"Make D act normally
 	nmap D d$
 
@@ -232,7 +235,6 @@ syntax on
 	" MISC {{{
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
 		" Search forward with f key
-		noremap ,, ;
 		nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR> 
 	"}}}
 	" A {{{
