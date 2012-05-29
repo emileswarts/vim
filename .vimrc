@@ -400,7 +400,7 @@ syntax on
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
 " TWIG {{{
- au BufNewFile,BufRead *.twig set filetype=twig
+ au BufNewFile,BufRead *.twig set filetype=html
 "}}}
 " VIM {{{
 	augroup ft_vim
