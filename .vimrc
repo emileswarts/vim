@@ -43,6 +43,7 @@
 	set backspace=indent,eol,start
 	"dont show hidden characers when file opens
 	set nolist
+	set number
 	"when pressing tab see as many options as possible
 	set wildmode=list:longest
 	set shortmess=atI
