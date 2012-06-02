@@ -174,9 +174,6 @@ syntax on
 
 	noremap ; <esc>A;<esc>
 	map <tab> %
-	"Bubble multiple lines - cool
-	vmap <C-k> xkPz[V`]
-	vmap <C-j> xp`[V`]
 
 	"escape to normal mode
 	inoremap hh <ESC>
@@ -228,6 +225,16 @@ syntax on
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+
+	"increase and decrease window size
+	map <C-S-H> <C-w><
+	map <C-S-J> <C-w>-
+	map <C-S-K> <C-w>+
+	map <C-S-L> <C-w>>
+	map <C-space> <C-w>=
+
+
+	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
