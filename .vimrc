@@ -31,7 +31,7 @@
 	set smartcase
 	set hidden
 	set ignorecase
-	set scrolloff=3
+	set scrolloff=0
 	set title
 	set hlsearch
 	set textwidth=150
@@ -193,6 +193,7 @@ syntax on
 	noremap k gk
 	noremap n nzz
 	noremap N Nzz
+	noremap H H
 	noremap U <C-R>
 	noremap * *zz
 
@@ -204,8 +205,8 @@ syntax on
 	map <tab> %
 
 	"easy to reach keys
-	noremap H ^
-	noremap L $
+	"noremap H ^
+	"noremap L $
 	noremap Y "+y$
 
 	nnoremap S i<cr><esc><right>
@@ -220,18 +221,19 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
+	"increase and decrease window size
+	map <left> <C-w><
+	map <down> <C-w>-
+	map <up> <C-w>+
+	map <right> <C-w>>
+	map <C-space> <C-w>=
+
 	"switching between windows
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
-	"increase and decrease window size
-	map <C-S-H> <C-w><
-	map <C-S-J> <C-w>-
-	map <C-S-K> <C-w>+
-	map <C-S-L> <C-w>>
-	map <C-space> <C-w>=
 
 
 	
