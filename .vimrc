@@ -233,9 +233,6 @@ syntax on
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
-
-
-
 	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
@@ -266,12 +263,6 @@ syntax on
 		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
 		vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
 		vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
-
-		"FATBEEHIVE bk_debug function
-		nnoremap <leader>bn :BlogNew<CR>
-		nnoremap <leader>bsp :BlogSave publish<CR>
-		nnoremap <leader>bl :BlogList<CR>
-
 "}}}
 " C {{{
 	"nerd tree toggle
