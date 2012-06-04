@@ -31,7 +31,7 @@
 	set smartcase
 	set hidden
 	set ignorecase
-	set scrolloff=3
+	set scrolloff=0
 	set title
 	set hlsearch
 	set textwidth=150
@@ -175,9 +175,6 @@ syntax on
 
 	noremap ; <esc>A;<esc>
 	map <tab> %
-	"Bubble multiple lines - cool
-	vmap <C-k> xkPz[V`]
-	vmap <C-j> xp`[V`]
 
 	"escape to normal mode
 	inoremap hh <ESC>
@@ -197,6 +194,7 @@ syntax on
 	noremap k gk
 	noremap n nzz
 	noremap N Nzz
+	noremap H H
 	noremap U <C-R>
 	noremap * *zz
 
@@ -208,8 +206,8 @@ syntax on
 	map <tab> %
 
 	"easy to reach keys
-	noremap H ^
-	noremap L $
+	"noremap H ^
+	"noremap L $
 	noremap Y "+y$
 
 	nnoremap S i<cr><esc><right>
@@ -224,11 +222,19 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
+	"increase and decrease window size
+	map <left> <C-w><
+	map <down> <C-w>-
+	map <up> <C-w>+
+	map <right> <C-w>>
+	map <C-space> <C-w>=
+
 	"switching between windows
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
@@ -258,12 +264,6 @@ syntax on
 		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
 		vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
 		vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
-
-		"FATBEEHIVE bk_debug function
-		nnoremap <leader>bn :BlogNew<CR>
-		nnoremap <leader>bsp :BlogSave publish<CR>
-		nnoremap <leader>bl :BlogList<CR>
-
 "}}}
 " C {{{
 	"nerd tree toggle
