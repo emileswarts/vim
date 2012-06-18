@@ -49,6 +49,9 @@
 	set wildmode=list:longest
 	set shortmess=atI
 	set noswapfile
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
 	set undodir=~/.vim/tmp/undo//     " undo files
 	set nobackup "no backups
 	set listchars=tab:▸\ ,eol:❤
