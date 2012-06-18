@@ -29,6 +29,7 @@
 	set autoindent
 	set smartindent
 	set smartcase
+	set novisualbell
 	set hidden
 	set ignorecase
 	set scrolloff=0
