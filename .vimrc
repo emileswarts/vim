@@ -62,6 +62,10 @@
 	set backupskip=/tmp/*,/private/tmp/*" 
 "}}}
 " PLUGINS {{{
+	" SUPRETAB {{{
+        let g:SuperTabMappingForward = '<c-space>'
+        let g:SuperTabMappingBackward = '<s-c-space>'
+	"}}}
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
 		let g:ctrlp_clear_cache_on_exit = 1 
