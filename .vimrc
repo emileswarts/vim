@@ -40,13 +40,10 @@
 	set history=1000
 	set dictionary=/usr/share/dict/words
 	set autoread
-	" Intuitive backspacing in insert mode
-	set backspace=indent,eol,start
-	"dont show hidden characers when file opens
+	set backspace=indent,eol,start " Intuitive backspacing in insert mode
 	set nolist
 	set number
-	"when pressing tab see as many options as possible
-	set wildmode=list:longest
+	set wildmode=list:longest "when pressing tab see as many options as possible
 	set shortmess=atI
 	set noswapfile
 	set guioptions-=m  "remove menu bar
@@ -58,8 +55,7 @@
 	let mapleader = ","
 	let maplocalleader = "\\"
 	filetype indent on
-	" Make Vim able to edit crontab files again.
-	set backupskip=/tmp/*,/private/tmp/*" 
+	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 "}}}
 " PLUGINS {{{
 	" SUPRETAB {{{
