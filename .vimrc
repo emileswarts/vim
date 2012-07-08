@@ -407,6 +407,9 @@ syntax on
 " TWIG {{{
  au BufNewFile,BufRead *.twig set filetype=html
 "}}}
+" VAGRANT/PUPPET {{{
+		au BufNewFile,BufRead *.pp setlocal filetype=ruby
+"}}}
 " VIM {{{
 	augroup ft_vim
 		au!
