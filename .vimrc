@@ -424,6 +424,7 @@ iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
 iabbrev ecoh echo
+iabbrev bk bk_debug("...");
 
 "}}}
 " FUNCTIONS {{{
