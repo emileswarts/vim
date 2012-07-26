@@ -183,6 +183,9 @@ syntax on
 	"escape to normal mode
 	inoremap hh <ESC>
 
+	"sentence completion
+	inoremap <C-e> <C-X><C-l>
+
 	"find next occurrence of f or t
 	nnoremap e ;
 
@@ -391,7 +394,7 @@ syntax on
 " }}}
 " MYSQL {{{
 	augroup ft_sql
-		so ~/.vim/secure.vim
+		"so ~/.vim/secure.vim
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
 	augroup END
