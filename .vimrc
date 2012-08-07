@@ -245,22 +245,7 @@ syntax on
 	" MISC {{{
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
 		" Search forward with f key
-		nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR> 
 	"}}}
-	" A {{{
-	"nnoremap <leader>a :Ack! 
-	" Motions to Ack for things.  Works with pretty much everything, including:
-	"
-	"   w, W, e, E, b, B, t*, f*, i*, a*, and custom text objects
-	"
-	" Awesome.
-	"
-	" Note: If the text covered by a motion contains a newline it won't work.  Ack
-	" searches line-by-line.
-
-	nnoremap <silent> <leader>a :set opfunc=<SID>AckMotion<CR>g@
-	xnoremap <silent> <leader>a :<C-U>call <SID>AckMotion(visualmode())<CR>
-"}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
 		vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
