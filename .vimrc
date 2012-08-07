@@ -682,5 +682,6 @@ iabbrev bk bk_debug("...");
 		au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
 		au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
 	augroup END
+	let g:Powerline_symbols = 'fancy'
 
 "}}}
