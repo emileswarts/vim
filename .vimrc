@@ -51,6 +51,8 @@
 	set listchars=tab:▸\ ,eol:❤
 	let mapleader = ","
 	let maplocalleader = "\\"
+	let php_sql_query=1                                                                                        
+	let php_htmlInStrings=1
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 "}}}
