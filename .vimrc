@@ -56,6 +56,7 @@
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 "}}}
+set clipboard=unnamed
 " PLUGINS {{{
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
@@ -314,7 +315,7 @@ syntax on
 "}}}
 " Y {{{
 	"copy to system clipboard
-	vnoremap <leader>y "+y
+	vnoremap <leader>y "*y
 "}}}
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
