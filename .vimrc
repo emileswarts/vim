@@ -232,6 +232,10 @@ inoremap OO <Esc>O
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
 		" Search forward with f key
 	"}}}
+	" A {{{
+	nnoremap <leader>a [I
+	vnoremap <leader>a [I 
+	"}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
 		vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
@@ -275,9 +279,9 @@ inoremap OO <Esc>O
 "}}}
 " M {{{
 	"show all lines with word under cursor
-	nnoremap <leader>m [I
-	vnoremap <leader>m [I 
 	let g:ctrlp_map = '<leader>m'
+	nnoremap <leader>M :marks<CR>
+	vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
 	"set line numbers
