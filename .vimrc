@@ -31,6 +31,7 @@
 	set ignorecase
 	set scrolloff=0
 	set title
+	set clipboard=unnamed
 	set hlsearch
 	set textwidth=150
 	set wrapmargin=150
@@ -56,7 +57,6 @@
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 "}}}
-set clipboard=unnamed
 " PLUGINS {{{
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
