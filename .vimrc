@@ -222,6 +222,11 @@ syntax on
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
+"INSERT MODE{{{
+inoremap II <Esc>I
+inoremap AA <Esc>A
+inoremap OO <Esc>O
+"}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr> :call clearmatches<cr>
