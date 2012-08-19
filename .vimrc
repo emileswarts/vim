@@ -156,7 +156,7 @@ syntax on
 	map <tab> %
 
 	"escape to normal mode
-	inoremap hh <ESC>
+	inoremap tn <ESC>
 
 	"sentence completion
 	inoremap <C-e> <C-X><C-l>
@@ -266,11 +266,6 @@ inoremap OO <Esc>O
 	nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
 	nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 "}}}
-" K {{{
-	"nerd tree toggle
-	nnoremap <leader>k :ZoomWin<CR>
-	vnoremap <leader>k :ZoomWin<CR>
-"}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
 	nnoremap <leader>l :set list!<CR>
@@ -375,6 +370,15 @@ inoremap OO <Esc>O
 	autocmd FileType php let b:surround_45 = "<?php \r ?>"
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
+" Pentadactyl {{{
+
+augroup ft_pentadactyl
+    au!
+    au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
+    au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
+augroup END
+
+" }}}
 " TWIG {{{
  au BufNewFile,BufRead *.twig set filetype=html
 "}}}
