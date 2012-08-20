@@ -31,7 +31,6 @@
 	set ignorecase
 	set scrolloff=0
 	set title
-	set clipboard=unnamed
 	set hlsearch
 	set textwidth=150
 	set wrapmargin=150
@@ -292,8 +291,8 @@ inoremap OO <Esc>O
 "}}}
 " P {{{
 	"paste from system clipboard
-	nnoremap <leader>p "+p
-	vnoremap <leader>p "+p
+	nnoremap <leader>p "*p
+	vnoremap <leader>p "*p
 "}}}
 " Q {{{
 	"quit
@@ -324,7 +323,7 @@ inoremap OO <Esc>O
 "}}}
 " Y {{{
 	"copy to system clipboard
-	vnoremap <leader>y "*y
+	vnoremap <leader>y "+y
 "}}}
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
