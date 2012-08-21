@@ -161,10 +161,18 @@ syntax on
 	inoremap tn <ESC>
 
 	"sentence completion
-	inoremap <C-e> <C-X><C-l>
+	inoremap <C-s> <C-X><C-l>
 
 	"find next occurrence of f or t
 	nnoremap e ;
+
+	"make switching tabs easier
+	nnoremap EN gt
+	vnoremap EN gt
+
+	"make switching tabs easier, backwards
+	nnoremap eN gT
+	vnoremap eN gT
 
 	"Make D act normally
 	nmap D d$
@@ -288,7 +296,8 @@ inoremap OO <Esc>O
 	"paste from system clipboard
 	"nnoremap <leader>p "+p
 	"vnoremap <leader>p "+p
-	map <leader>p :r !pbpaste<CR>
+	nnoremap <leader>p :r !pbpaste<CR>
+	vnoremap <leader>p :r !pbpaste<CR>
 "}}}
 " Q {{{
 	"quit
@@ -320,7 +329,8 @@ inoremap OO <Esc>O
 " Y {{{
 	"copy to system clipboard
 	"vnoremap <leader>y "*y
-	vmap <leader>y :w !pbcopy<CR><CR>
+	vnoremap <leader>y :w !pbcopy<CR><CR>
+	nnoremap <leader>y :w !pbcopy<CR><CR>
 "}}}
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
