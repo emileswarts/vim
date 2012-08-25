@@ -47,6 +47,7 @@
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
+	set spelllang=en_gb  "spell checking
 	set undodir=~/.vim/tmp/undo//     " undo files
 	set nobackup "no backups
 	set listchars=tab:▸\ ,eol:❤
@@ -335,6 +336,10 @@ inoremap OO <Esc>O
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
+"}}}
+"CTRL REMAP {{{
+"spellcheck
+  nnoremap <c-s> z=
 "}}}
 "LOCAL LEADER FUNCTIONS {{{
  
