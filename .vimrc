@@ -169,12 +169,12 @@ syntax on
 	nnoremap e ;
 
 	"make switching tabs easier
-	nnoremap EN gt
-	vnoremap EN gt
+	nnoremap EN gT
+	vnoremap EN gT
 
 	"make switching tabs easier, backwards
-	nnoremap eN gT
-	vnoremap eN gT
+	nnoremap eN gt
+	vnoremap eN gt
 
 	"Make D act normally
 	nmap D d$
