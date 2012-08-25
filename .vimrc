@@ -160,6 +160,7 @@ syntax on
 
 	"escape to normal mode
 	inoremap tn <ESC>
+	vnoremap tn <ESC>
 
 	"sentence completion
 	inoremap <C-s> <C-X><C-l>
