@@ -340,9 +340,6 @@ inoremap OO <Esc>O
 "}}}
 "}}}
 "CTRL REMAP {{{
-"spellcheck
-  nnoremap <c-s> z=
-"}}}
 "LOCAL LEADER FUNCTIONS {{{
  
 "}}}
@@ -374,6 +371,12 @@ inoremap OO <Esc>O
 "}}}
 " HTML {{{
 	    au BufRead *.html :normal gg=G
+" }}}
+" {{{ MARKDOWN
+
+	 augroup ft_md
+		au BufNewFile,BufRead *.md setlocal filetype=markdown
+	augroup END
 " }}}
 " MYSQL {{{
 	augroup ft_sql
