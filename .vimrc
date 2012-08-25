@@ -265,6 +265,7 @@ inoremap OO <Esc>O
 " E {{{
 	"echo function
 	vnoremap <leader>e yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
+	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
