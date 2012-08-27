@@ -274,10 +274,8 @@ inoremap OO <Esc>O
 
 "}}}
 " H {{{
-	nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+	nnoremap <silent> <leader>h :!hg add . && hg ci<cr>
+	vnoremap <silent> <leader>h :!hg add . && hg ci<cr> 
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
