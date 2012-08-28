@@ -47,6 +47,7 @@
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
+	set spelllang=en_gb  "spell checking
 	set undodir=~/.vim/tmp/undo//     " undo files
 	set nobackup "no backups
 	set listchars=tab:▸\ ,eol:❤
@@ -159,6 +160,7 @@ syntax on
 
 	"escape to normal mode
 	inoremap tn <ESC>
+	vnoremap tn <ESC>
 
 	"sentence completion
 	inoremap <C-s> <C-X><C-l>
@@ -167,12 +169,12 @@ syntax on
 	nnoremap e ;
 
 	"make switching tabs easier
-	nnoremap EN gt
-	vnoremap EN gt
+	nnoremap EN gT
+	vnoremap EN gT
 
 	"make switching tabs easier, backwards
-	nnoremap eN gT
-	vnoremap eN gT
+	nnoremap eN gt
+	vnoremap eN gt
 
 	"Make D act normally
 	nmap D d$
@@ -263,6 +265,7 @@ inoremap OO <Esc>O
 " E {{{
 	"echo function
 	vnoremap <leader>e yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
+	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
@@ -271,10 +274,8 @@ inoremap OO <Esc>O
 
 "}}}
 " H {{{
-	nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-	nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+	nnoremap <silent> <leader>h :!hg add . && hg ci<cr>
+	vnoremap <silent> <leader>h :!hg add . && hg ci<cr> 
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
@@ -332,6 +333,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
 "}}}
+"CTRL REMAP {{{
 "LOCAL LEADER FUNCTIONS {{{
  
 "}}}
@@ -363,6 +365,12 @@ inoremap OO <Esc>O
 "}}}
 " HTML {{{
 	    au BufRead *.html :normal gg=G
+" }}}
+" {{{ MARKDOWN
+
+	 augroup ft_md
+		au BufNewFile,BufRead *.md setlocal filetype=markdown
+	augroup END
 " }}}
 " MYSQL {{{
 	augroup ft_sql
