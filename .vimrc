@@ -21,7 +21,7 @@
 	set cursorline
 	set cursorcolumn
 	set lazyredraw
-	set shell=/bin/bash
+	set shell=/bin/zsh
 	set virtualedit=all
 	set autoindent
 	set smartindent
@@ -55,15 +55,18 @@
 	let php_htmlInStrings=1
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 "}}}
 " PLUGINS {{{
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
-		let g:ctrlp_clear_cache_on_exit = 1 
+		let g:ctrlp_clear_cache_on_exit = 0 
 		let g:ctrlp_cache_dir = $HOME
 		let g:ctrlp_dotfiles = 1
-		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*'
-		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*  " Linux/MacOSX
+		let g:ctrlp_max_height = 30 
+		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*|/images/.*'
+		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*
+		let g:ctrlp_by_filename = 0 
 		let g:ctrlp_working_path_mode = 0
 		let g:ctrlp_match_window_reversed = 1
 		let g:ctrlp_split_window = 0
@@ -158,10 +161,18 @@ syntax on
 	inoremap tn <ESC>
 
 	"sentence completion
-	inoremap <C-e> <C-X><C-l>
+	inoremap <C-s> <C-X><C-l>
 
 	"find next occurrence of f or t
 	nnoremap e ;
+
+	"make switching tabs easier
+	nnoremap EN gt
+	vnoremap EN gt
+
+	"make switching tabs easier, backwards
+	nnoremap eN gT
+	vnoremap eN gT
 
 	"Make D act normally
 	nmap D d$
@@ -226,7 +237,7 @@ inoremap OO <Esc>O
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
-		noremap <leader><space> :noh<cr> :call clearmatches<cr>
+		noremap <leader><space> :noh<cr>
 		" Search forward with f key
 	"}}}
 	" A {{{
@@ -272,7 +283,6 @@ inoremap OO <Esc>O
 " M {{{
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
-	nnoremap <leader>M :marks<CR>
 	vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
