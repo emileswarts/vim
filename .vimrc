@@ -224,15 +224,18 @@ syntax on
 	map <C-space> <C-w>=
 
 	"switching between windows
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+	nnoremap <C-h> <C-w>h
+	nnoremap <C-j> <C-w>j
+	nnoremap <C-k> <C-w>k
+	nnoremap <C-l> <C-w>l
 	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
 "INSERT MODE{{{
+inoremap <C-l> <C-x><C-l>
+inoremap <C-f> <C-x><C-f>
+inoremap <C-t> <C-x><C-t>
 inoremap II <Esc>I
 inoremap AA <Esc>A
 inoremap OO <Esc>O
@@ -274,8 +277,7 @@ inoremap OO <Esc>O
 
 "}}}
 " H {{{
-	nnoremap <silent> <leader>h :!hg add . && hg ci<cr>
-	vnoremap <silent> <leader>h :!hg add . && hg ci<cr> 
+	nnoremap <leader>h :!hg addremove && hg ci<cr> 
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
