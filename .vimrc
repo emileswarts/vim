@@ -297,8 +297,8 @@ inoremap OO <Esc>O
 "}}}
 " P {{{
 	"paste from system clipboard
-	nnoremap <leader>p "*p
-	vnoremap <leader>p "*p
+	nnoremap <leader>p "+p
+	vnoremap <leader>p "+p
 "}}}
 " Q {{{
 	"quit
