@@ -20,6 +20,7 @@
 	set incsearch
 	set cursorline
 	set cursorcolumn
+	set tags+=tags;$HOME
 	set lazyredraw
 	set shell=/bin/zsh
 	set virtualedit=all
@@ -117,7 +118,6 @@
 	"}}}
 	" Taglist {{{
 		let Tlist_Use_Right_Window=1
-		let Tlist_Show_One_File=1
 	"}}}
 	" Yankring {{{
 		let g:yankring_window_use_bottom = 0
