@@ -482,36 +482,6 @@ iabbrev bk bk_debug("...");
 		execute current_window . 'wincmd w'
 	endfunction
   
-
-	function! s:CopyMotionForType(type)
-		if a:type ==# 'v'
-			silent execute "normal! `<" . a:type . "`>y"
-		elseif a:type ==# 'char'
-			silent execute "normal! `[v`]y"
-		endif
-	endfunction
-
-	function! s:AckMotion(type) abort
-		let reg_save = @@
-
-		call s:CopyMotionForType(a:type)
-
-		execute "normal! :Ack! --literal " . shellescape(@@) . "\<cr>"
-
-		let @@ = reg_save
-	endfunction
- 
-	"return a warning for "long lines" where "long" is either &textwidth or 80 (if
-	"no &textwidth is set)
-	"
-	"return '' if no long lines
-	"return '[#x,my,$z] if long lines are found, were x is the number of long
-	"lines, y is the median length of the long lines and z is the length of the
-	"longest line
-
-	"return a list containing the lengths of the long lines in this buffer
-	"find the median of the given array of numbers
-
 	call MakeSpacelessIabbrev('d', '$')
 	call MakeSpacelessIabbrev('pnd', '£')
 
