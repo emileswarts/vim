@@ -309,6 +309,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>r :YRShow<CR> 
 "}}}
 " S {{{
+	nnoremap <leader>S :mksession ~/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
 "}}}
