@@ -7,6 +7,9 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
+
+" To use a black background, :let g:shoreditch_black_background = 1
+
 let g:colors_name="camo"
 hi Normal       guifg=bisque            guibg=grey15
 hi Cursor       guifg=snow              guibg=bisque3
