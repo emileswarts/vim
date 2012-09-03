@@ -129,7 +129,7 @@
 filetype plugin on
 
 set t_Co=256
-colorscheme badwolf
+colorscheme velvet
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -489,4 +489,5 @@ iabbrev bk bk_debug("...");
 "}}}
 " STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
+
 "}}}
