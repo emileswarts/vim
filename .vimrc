@@ -63,7 +63,7 @@
 " PLUGINS {{{
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
-		let g:ctrlp_clear_cache_on_exit = 0 
+		let g:ctrlp_clear_cache_on_exit = 1 
 		let g:ctrlp_cache_dir = $HOME
 		let g:ctrlp_dotfiles = 1
 		let g:ctrlp_max_height = 30 
@@ -82,7 +82,7 @@
 		\ }
 	"}}}
 	" Db {{{
-		let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:passwd=corpse:driver=mysql'
+		let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:driver=mysql'
 		let g:dbext_default_buffer_lines = 15
 		let g:dbext_default_DBI_orientation = 'vertical'
 		let g:window_use_horiz = 0
@@ -309,7 +309,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>r :YRShow<CR> 
 "}}}
 " S {{{
-	nnoremap <leader>S :mksession ~/
+	nnoremap <leader>S :mksession ~/vs/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
 "}}}

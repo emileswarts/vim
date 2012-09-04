@@ -1,5 +1,6 @@
 let g:Powerline#Matches#matches = {
 	\ 'command_t'       : Pl#Match#Add('bufname("%")', 'GoToFile'),
+	\ 'ctrlp'       	: Pl#Match#Add('bufname("%")', 'GoToFile'),
 	\ 'ft_help'         : Pl#Match#Add('&ft'         , 'help'),
 	\ 'ft_man'          : Pl#Match#Add('&ft'         , 'man'),
 	\ 'ft_qf'           : Pl#Match#Add('&ft'         , 'qf'),
