@@ -1,1 +1,1 @@
-/home/emile/velvet/velvet.vim
+/Users/emileswarts/velvet_vim_colorscheme/velvet.vim
