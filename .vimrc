@@ -218,8 +218,8 @@ syntax on
 	vmap <SPACE> 10j
 
 	"increase and decrease window size
-	map <left> <C-w><
-	map <down> <C-w>-
+	map <left> 10<C-w><
+	map <down> 10<C-w>-
 	map <up> <C-w>+
 	map <right> <C-w>>
 	map <C-space> <C-w>=
@@ -338,6 +338,7 @@ inoremap OO <Esc>O
 "}}}
 "}}}
 "CTRL REMAP {{{
+"}}}
 "LOCAL LEADER FUNCTIONS {{{
  
 "}}}
@@ -489,5 +490,4 @@ iabbrev bk bk_debug("...");
 "}}}
 " STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
-
 "}}}
