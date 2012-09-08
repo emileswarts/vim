@@ -117,6 +117,9 @@
 		let php_show_semicolon_error = 1
 		let g:rbpt_max = 16
 	"}}}
+	"Syntastic {{{
+	
+	"}}}
 	" Taglist {{{
 		let Tlist_Use_Right_Window=1
 	"}}}
@@ -268,7 +271,7 @@ inoremap OO <Esc>O
 "}}}
 " E {{{
 	"echo function
-	vnoremap <leader>e yo<ESC>iecho<SPACE>"<ESC>pA";<ESC>
+	nnoremap <leader>e :Errors<CR>
 	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
@@ -312,6 +315,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>S :mksession ~/vs/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
+	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
 	nnoremap <leader>t :TlistToggle<CR>
@@ -385,6 +389,12 @@ inoremap OO <Esc>O
 	augroup END
 " }}}
 " PHP {{{
+
+		let s:php_executable = "/usr/bin/php"
+		if !(executable(s:php_executable))
+		let makeprg = php_executable . " -l %"
+	endif
+
 
 	au BufRead *.php set ft=php.html
 	au BufNewFile *.php set ft=php.html
