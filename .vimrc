@@ -89,21 +89,6 @@
 		let g:window_use_bottom = 0
 		let g:window_use_right = 1
 	"}}}
-	" EasyMotion {{{
-		let g:EasyMotion_do_shade = 1
-		let g:EasyMotion_mapping_f = '<leader>ef'
-		let g:EasyMotion_mapping_F = '<leader>eF'
-		let g:EasyMotion_mapping_T = '<leader>eT'
-		let g:EasyMotion_mapping_t = '<leader>et'
-		let g:EasyMotion_mapping_b = '<leader>eb'
-		let g:EasyMotion_mapping_B = '<leader>eB'
-		let g:EasyMotion_mapping_E = '<leader>eE'
-		let g:EasyMotion_mapping_w = '<leader>ew'
-		let g:EasyMotion_mapping_W = '<leader>eW'
-		let g:EasyMotion_mapping_e = '<leader>ee'
-		let g:EasyMotion_mapping_k = '<leader>ek'
-		let g:EasyMotion_mapping_j = '<leader>ej'
-	"}}}
 	" PHP {{{
 		let php_sql_query = 1
 		let php_htmlInStrings = 1
