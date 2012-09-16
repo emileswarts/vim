@@ -257,7 +257,10 @@ inoremap OO <Esc>O
 " E {{{
 	"echo function
 	nnoremap <leader>e :Errors<CR>
-	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
+	"blog
+	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR> 
+	"velvet colorscheme
+	nnoremap <leader>ec :vsp ~/velvet_vim_colorscheme/velvet.vim<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
