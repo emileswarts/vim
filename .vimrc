@@ -209,7 +209,7 @@ syntax on
 	map <left> 10<C-w><
 	map <down> 10<C-w>-
 	map <up> <C-w>+
-	map <right> <C-w>>
+	map <right> 10<C-w>>
 	map <C-space> <C-w>=
 
 	"switching between windows
