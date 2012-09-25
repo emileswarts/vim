@@ -78,6 +78,9 @@
 		\ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
 		\ 'PrtHistory(-1)':       ['<c-n>'],
 		\ 'PrtHistory(1)':        ['<c-p>'],
+		\ 'PrtBS()':        	  ['<c-h>'],
+		\ 'PrtCurLeft()':         ['<left>'],
+		\ 'PrtClearCache()':      ['<c-q>'],
 		\ 'ToggleFocus()':        ['<c-tab>'],
 		\ }
 	"}}}
