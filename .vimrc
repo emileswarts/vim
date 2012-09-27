@@ -147,15 +147,12 @@ syntax on
 	nnoremap ' `
 	nnoremap ` ' 
 
-	noremap ; <esc>A;<esc>
+	noremap ; <esc>mjA;<esc>'j
 	map <tab> %
 
 	"escape to normal mode
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
-
-	"sentence completion
-	inoremap <C-s> <C-X><C-l>
 
 	"find next occurrence of f or t
 	nnoremap e ;
