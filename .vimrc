@@ -147,7 +147,7 @@ syntax on
 	nnoremap ' `
 	nnoremap ` ' 
 
-	noremap ; <esc>A;<esc>
+	noremap ; <esc>mjA;<esc>'j
 	map <tab> %
 
 	"escape to normal mode
