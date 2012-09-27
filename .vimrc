@@ -154,9 +154,6 @@ syntax on
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
 
-	"sentence completion
-	inoremap <C-s> <C-X><C-l>
-
 	"find next occurrence of f or t
 	nnoremap e ;
 
