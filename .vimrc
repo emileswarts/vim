@@ -535,7 +535,17 @@ endfunction
 	call MakeSpacelessIabbrev('d', '$')
 	call MakeSpacelessIabbrev('pnd', '£')
 
-"}}}
-" STATUS LINE {{{
+	" Show syntax highlighting groups for word under cursor
+	nmap <leader>b :call <SID>SynStack()<CR>
+
+	function! <SID>SynStack()
+		if !exists("*synstack")
+			return
+		endif
+		echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	endfunc
+
+	"}}}
+	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
-"}}}
+	"}}}
