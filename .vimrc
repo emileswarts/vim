@@ -120,7 +120,7 @@
 filetype plugin on
 
 set t_Co=256
-colorscheme velvet
+colorscheme skywalker
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
