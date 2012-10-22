@@ -115,12 +115,16 @@
 		let g:yankring_window_use_bottom = 0
 		let g:yankring_window_height = 15
 	"}}}
+	" Clam {{{
+		nnoremap ! :Clam<space>
+		vnoremap ! :ClamVisual<space>
+	"}}}
 "}}}
 " COLORS {{{
 filetype plugin on
 
 set t_Co=256
-colorscheme velvet
+colorscheme skywalker
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
