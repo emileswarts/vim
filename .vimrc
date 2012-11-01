@@ -265,7 +265,8 @@ inoremap OO <Esc>O
 	"blog
 	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR> 
 	"velvet colorscheme
-	nnoremap <leader>ec :vsp ~/velvet_vim_colorscheme/velvet.vim<CR>
+	nnoremap <leader>ec :vsp ~/skywalker/skywalker.vim<CR>
+	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
