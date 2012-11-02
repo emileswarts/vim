@@ -148,6 +148,9 @@ syntax on
 	nnoremap <C-UP> ddkP
 	nnoremap <C-Down> ddp
 
+	nnoremap & :&&<CR>
+	xnoremap & :&&<CR>
+
 	nnoremap ' `
 	nnoremap ` ' 
 
