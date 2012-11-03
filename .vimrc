@@ -21,6 +21,7 @@
 	set incsearch
 	set cursorline
 	set cursorcolumn
+	"set grepprg=ack\ --nogroup\ $*
 	set tags+=tags;$HOME
 	set lazyredraw
 	set shell=/bin/zsh
