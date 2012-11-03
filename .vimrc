@@ -255,8 +255,6 @@ inoremap OO <Esc>O
 		vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
 "}}}
 " C {{{
-	"nerd tree toggle
-	nnoremap <leader>c<SPACE> :NERDComToggleComment<CR>
 "}}}
 " D {{{
 	"php die function
