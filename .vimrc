@@ -142,8 +142,8 @@ syntax on
 "REMAP KEYS{{{
 
 	" Use sane regexes.
-	nnoremap / /\v
-	vnoremap / /\v
+	nnoremap / /\V
+	vnoremap / /\V
 
 	"Bubble single lines
 	nnoremap <C-UP> ddkP
