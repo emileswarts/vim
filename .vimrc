@@ -142,8 +142,8 @@ syntax on
 "REMAP KEYS{{{
 
 	" Use sane regexes.
-	nnoremap / /\v
-	vnoremap / /\v
+	nnoremap / /\V
+	vnoremap / /\V
 
 	"Bubble single lines
 	nnoremap <C-UP> ddkP
@@ -249,10 +249,7 @@ inoremap OO <Esc>O
 	"}}}
 	" B {{{
 		"FATBEEHIVE bk_debug function
-		vnoremap <leader>bs yo<ESC>ibk_debug("<ESC>hhpA;<ESC>
-		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>
-		vnoremap <leader>bse yo<ESC>ibk_debug("<ESC>hhpA;<ESC>hhi", "emile@fatbeehive.com
-		vnoremap <leader>be yo<ESC>ibk_debug(<ESC>hpA;<ESC>hhi, "emile@fatbeehive.com
+		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>jk
 "}}}
 " C {{{
 "}}}
