@@ -11,6 +11,7 @@
 "}}}
 "BASIC OPTIONS {{{
 	set nocompatible
+	set term=screen-256color
 	set encoding=utf-8
 	set laststatus=2
 	set tabstop=4
