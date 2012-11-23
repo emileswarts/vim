@@ -10,50 +10,50 @@
 	call pathogen#helptags()
 "}}}
 "BASIC OPTIONS {{{
-	set nocompatible
-	set term=screen-256color
-	set encoding=utf-8
-	set laststatus=2
-	set tabstop=4
-	set shiftwidth=4
-	set guioptions-=T
-	set vb t_vb=
-	set ruler
-	set incsearch
-	set cursorline
-	set cursorcolumn
 	"set grepprg=ack\ --nogroup\ $*
-	set tags+=tags;$HOME
-	set lazyredraw
-	set shell=/bin/zsh
-	set virtualedit=all
 	set autoindent
-	set smartindent
-	set smartcase
-	set novisualbell
-	set hidden
-	set ignorecase
-	set scrolloff=0
-	set title
-	set hlsearch
-	set textwidth=150
-	set wrapmargin=150
-	set history=1000
-	set dictionary=/usr/share/dict/words
 	set autoread
 	set backspace=indent,eol,start " Intuitive backspacing in insert mode
-	set nolist
-	set number
-	set wildmode=list:longest "when pressing tab see as many options as possible
-	set shortmess=atI
-	set noswapfile
-	set guioptions-=m  "remove menu bar
+	set cursorcolumn
+	set term=screen-256color
+	set cursorline
+	set dictionary=/usr/share/dict/words
+	set encoding=utf-8
+	set guioptions-=T
 	set guioptions-=T  "remove toolbar
+	set guioptions-=m  "remove menu bar
 	set guioptions-=r  "remove right-hand scroll bar
-	set spelllang=en_gb  "spell checking
-	set undodir=~/.vim/tmp/undo//     " undo files
-	set nobackup "no backups
+	set hidden
+	set history=1000
+	set hlsearch
+	set ignorecase
+	set incsearch
+	set laststatus=2
+	set lazyredraw
 	set listchars=tab:▸\ ,eol:❤
+	set nobackup "no backups
+	set nocompatible
+	set nolist
+	set noswapfile
+	set novisualbell
+	set number
+	set ruler
+	set scrolloff=0
+	set shell=/bin/zsh
+	set shiftwidth=4
+	set shortmess=atI
+	set smartcase
+	set smartindent
+	set spelllang=en_gb  "spell checking
+	set tabstop=4
+	set tags+=tags;$HOME
+	set textwidth=150
+	set title
+	set undodir=~/.vim/tmp/undo//     " undo files
+	set vb t_vb=
+	set virtualedit=all
+	set wildmode=list:longest "when pressing tab see as many options as possible
+	set wrapmargin=150
 	let mapleader = ","
 	let maplocalleader = "\\"
 	let php_sql_query=1                                                                                        
@@ -396,6 +396,9 @@ inoremap OO <Esc>O
 	autocmd FileType php let b:surround_45 = "<?php \r ?>"
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
+" RUBY {{{
+	autocmd FileType ruby set tabstop=2 
+" }}}
 " Pentadactyl {{{
 
 augroup ft_pentadactyl
