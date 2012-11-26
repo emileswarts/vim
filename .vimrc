@@ -15,6 +15,7 @@
 	set autoread
 	set backspace=indent,eol,start " Intuitive backspacing in insert mode
 	set cursorcolumn
+	set term=screen-256color
 	set cursorline
 	set dictionary=/usr/share/dict/words
 	set encoding=utf-8
@@ -81,7 +82,7 @@
 		\ 'PrtHistory(1)':        ['<c-p>'],
 		\ 'PrtBS()':        	  ['<c-h>'],
 		\ 'PrtCurLeft()':         ['<left>'],
-		\ 'PrtClearCache()':      ['<c-q>'],
+		\ 'PrtClearCache()':      ['<c-space>'],
 		\ 'ToggleFocus()':        ['<c-tab>'],
 		\ }
 	"}}}
