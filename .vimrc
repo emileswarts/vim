@@ -155,7 +155,6 @@ syntax on
 	nnoremap ' `
 	nnoremap ` ' 
 
-	noremap ; <esc>mjA;<esc>'j
 	map <tab> %
 
 	"escape to normal mode
@@ -240,6 +239,7 @@ inoremap OO <Esc>O
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
+		nnoremap <leader>; <esc>mjA;<esc>'j 
 		" Search forward with f key
 	"}}}
 	" A {{{
