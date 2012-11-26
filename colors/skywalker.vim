@@ -379,6 +379,7 @@ call s:HL('phpFunctions', 'clownfish', '', 'bold')
 call s:HL('phpParent', 'tokyowhite', '', 'bold')
 " }}}
 " RUBY {{{
+call s:HL('htmlItalic', 'palepurple', '', 'bold')
 call s:HL('railsMethod', 'palepurple', '', 'bold')
 call s:HL('rubyDefine', 'palepurple', '', 'bold')
 call s:HL('rubyDescribe', 'palepurple', '', 'bold')
