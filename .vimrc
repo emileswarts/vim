@@ -17,6 +17,7 @@
 	set cursorcolumn
 	set term=screen-256color
 	set cursorline
+	set gdefault
 	set dictionary=/usr/share/dict/words
 	set encoding=utf-8
 	let tab_width=4
