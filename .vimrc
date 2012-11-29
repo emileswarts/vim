@@ -29,6 +29,7 @@
 	set ignorecase
 	set incsearch
 	set showcmd
+	set showmode                      " Display the mode you're in.
 	set laststatus=2
 	set lazyredraw
 	set listchars=tab:▸\ ,eol:❤
