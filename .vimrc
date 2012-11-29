@@ -211,6 +211,8 @@ syntax on
 	"noremap H ^
 	"noremap L $
 	noremap Y "+y$
+	" Don't use Ex mode; use Q for console mode
+	map Q q:
 
 	nnoremap S i<cr><esc><right>
 
