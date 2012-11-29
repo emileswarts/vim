@@ -30,7 +30,7 @@
 	set ignorecase
 	set incsearch
 	set showcmd
-	set showmode                      " Display the mode you're in.
+	set showmode
 	set laststatus=2
 	set lazyredraw
 	set listchars=tab:▸\ ,eol:❤
@@ -148,6 +148,8 @@ syntax on
 	" Use sane regexes.
 	nnoremap / /\V
 	vnoremap / /\V
+	nnoremap ? ?\V
+	vnoremap ? ?\V
 
 	"Bubble single lines
 	nnoremap <C-UP> ddkP
