@@ -19,6 +19,7 @@
 	set cursorline
 	set dictionary=/usr/share/dict/words
 	set encoding=utf-8
+	let tab_width=4
 	set guioptions-=T
 	set guioptions-=T  "remove toolbar
 	set guioptions-=m  "remove menu bar
