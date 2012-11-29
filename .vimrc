@@ -28,6 +28,7 @@
 	set hlsearch
 	set ignorecase
 	set incsearch
+	set showcmd
 	set laststatus=2
 	set lazyredraw
 	set listchars=tab:▸\ ,eol:❤
