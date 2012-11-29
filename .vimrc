@@ -66,6 +66,13 @@
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+	autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 "}}}
 " PLUGINS {{{
 	" CTRLP {{{
