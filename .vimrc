@@ -24,7 +24,7 @@
 	set guioptions-=m  "remove menu bar
 	set guioptions-=r  "remove right-hand scroll bar
 	set hidden
-	set history=1000
+	set history=9000
 	set hlsearch
 	set ignorecase
 	set incsearch
