@@ -265,6 +265,7 @@ inoremap OO <Esc>O
 		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>jk
 "}}}
 " C {{{
+	nmap <silent> <leader>c :ClearCtrlPCache<cr>:CtrlP<cr>
 "}}}
 " D {{{
 	"php die function
