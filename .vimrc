@@ -265,7 +265,7 @@ inoremap OO <Esc>O
 		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>jk
 "}}}
 " C {{{
-	nmap <silent> <leader>c :ClearCtrlPCache<cr>:CtrlP<cr>
+	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
 "}}}
 " D {{{
 	"php die function
@@ -347,8 +347,6 @@ inoremap OO <Esc>O
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
-"}}}
-"CTRL REMAP {{{
 "}}}
 "LOCAL LEADER FUNCTIONS {{{
  
