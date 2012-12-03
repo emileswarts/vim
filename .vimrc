@@ -297,6 +297,7 @@ inoremap OO <Esc>O
 " M {{{
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
+	nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
 	vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
@@ -410,6 +411,9 @@ inoremap OO <Esc>O
 " RUBY {{{
 	autocmd FileType ruby set tabstop=2 
 " }}}
+" MUTT {{{
+au BufNewFile,BufRead *.muttrc set filetype=muttrc
+" }}}
 " Pentadactyl {{{
 
 augroup ft_pentadactyl
@@ -420,7 +424,7 @@ augroup END
 
 " }}}
 " TWIG {{{
- au BufNewFile,BufRead *.twig set filetype=html
+	au BufNewFile,BufRead *.twig set filetype=twig
 "}}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
