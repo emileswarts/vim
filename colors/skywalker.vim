@@ -1,1 +1,0 @@
-/home/emile/skywalker/skywalker.vim

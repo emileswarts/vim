@@ -78,6 +78,7 @@
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
 		let g:ctrlp_clear_cache_on_exit = 1 
+		let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
 		let g:ctrlp_cache_dir = $HOME
 		let g:ctrlp_dotfiles = 1
 		let g:ctrlp_max_height = 30 
@@ -271,6 +272,7 @@ inoremap OO <Esc>O
 		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>jk
 "}}}
 " C {{{
+	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
 "}}}
 " D {{{
 	"php die function
@@ -302,6 +304,7 @@ inoremap OO <Esc>O
 " M {{{
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
+	nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
 	vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
@@ -352,8 +355,6 @@ inoremap OO <Esc>O
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
-"}}}
-"CTRL REMAP {{{
 "}}}
 "LOCAL LEADER FUNCTIONS {{{
  
@@ -417,6 +418,9 @@ inoremap OO <Esc>O
 " RUBY {{{
 	autocmd FileType ruby set tabstop=2 
 " }}}
+" MUTT {{{
+au BufNewFile,BufRead *.muttrc set filetype=muttrc
+" }}}
 " Pentadactyl {{{
 
 augroup ft_pentadactyl
@@ -427,7 +431,7 @@ augroup END
 
 " }}}
 " TWIG {{{
- au BufNewFile,BufRead *.twig set filetype=html
+	au BufNewFile,BufRead *.twig set filetype=twig
 "}}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
