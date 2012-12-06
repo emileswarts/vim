@@ -349,6 +349,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>w :w!<CR>
 "}}}
 " X {{{
+	nnoremap <leader>x :se readonly<CR>
 "}}}
 " Y {{{
 	"copy to system clipboard
