@@ -14,9 +14,9 @@
 	set autoindent
 	set autoread
 	set backspace=indent,eol,start " Intuitive backspacing in insert mode
-	set cursorcolumn
+	"set cursorcolumn
 	set term=screen-256color
-	set cursorline
+	"set cursorline
 	set gdefault
 	set shiftround
 	set dictionary=/usr/share/dict/words
