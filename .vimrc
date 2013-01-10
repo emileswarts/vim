@@ -72,7 +72,11 @@
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-	autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+	if has("autocmd")
+		autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+		autocmd FileType let g:rubycomplete_buffer_loading=1
+		autocmd FileType let g:rubycomplete_classes_in_global=1
+	endif
 "}}}
 " PLUGINS {{{
 	" CTRLP {{{
