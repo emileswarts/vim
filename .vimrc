@@ -19,7 +19,7 @@
 	set cursorline
 	set gdefault
 	set shiftround
-	set dictionary=/usr/share/dict/words
+	set dictionary=/usr/share/dict/cracklib-small
 	set encoding=utf-8
 	let tab_width=4
 	set guioptions-=T
@@ -214,8 +214,8 @@ syntax on
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
-	nnoremap n nzzzv<cr>
-	nnoremap N Nzzzv:call PulseCursorLine()<cr>
+	"nnoremap n nzzzv<cr>
+	"nnoremap N Nzzzv:call PulseCursorLine()<cr>
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
@@ -250,6 +250,8 @@ syntax on
 	nnoremap <C-j> <C-w>j
 	nnoremap <C-k> <C-w>k
 	nnoremap <C-l> <C-w>l
+
+	inoremap <C-t> <C-x><C-k>
 	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
@@ -258,9 +260,6 @@ syntax on
 inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
 inoremap <C-t> <C-x><C-t>
-inoremap II <Esc>I
-inoremap AA <Esc>A
-inoremap OO <Esc>O
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
