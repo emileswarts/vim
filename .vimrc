@@ -185,6 +185,8 @@ syntax on
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
 
+	vmap <C-a> S{iif()<ESC>i
+
 	"find next occurrence of f or t
 	nnoremap e ;
 
