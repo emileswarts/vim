@@ -340,7 +340,8 @@ inoremap <C-t> <C-x><C-t>
 	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
-	nnoremap <leader>t :TlistToggle<CR>
+	"nnoremap <leader>t :TlistToggle<CR>
+	nnoremap <leader>t :!php tests/test_suite.php<CR>
 "}}}
 " U {{{
 	nnoremap <leader>u :GundoToggle<CR>
