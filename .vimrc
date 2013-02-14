@@ -14,12 +14,12 @@
 	set autoindent
 	set autoread
 	set backspace=indent,eol,start " Intuitive backspacing in insert mode
-	"set cursorcolumn
+	set cursorcolumn
 	set term=screen-256color
-	"set cursorline
+	set cursorline
 	set gdefault
 	set shiftround
-	set dictionary=/usr/share/dict/words
+	set dictionary=/usr/share/dict/cracklib-small
 	set encoding=utf-8
 	let tab_width=4
 	set guioptions-=T
@@ -186,6 +186,8 @@ syntax on
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
 
+	vmap <C-a> S{iif()<ESC>i
+
 	"find next occurrence of f or t
 	nnoremap e ;
 
@@ -215,8 +217,8 @@ syntax on
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
-	nnoremap n nzzzv:call PulseCursorLine()<cr>
-	nnoremap N Nzzzv:call PulseCursorLine()<cr>
+	"nnoremap n nzzzv<cr>
+	"nnoremap N Nzzzv:call PulseCursorLine()<cr>
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
@@ -251,6 +253,8 @@ syntax on
 	nnoremap <C-j> <C-w>j
 	nnoremap <C-k> <C-w>k
 	nnoremap <C-l> <C-w>l
+
+	inoremap <C-t> <C-x><C-k>
 	
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
@@ -259,9 +263,6 @@ syntax on
 inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
 inoremap <C-t> <C-x><C-t>
-inoremap II <Esc>I
-inoremap AA <Esc>A
-inoremap OO <Esc>O
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
@@ -476,53 +477,6 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 
 	function! MakeSpacelessIabbrev(from, to)
 		execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
-	endfunction
-	function! PulseCursorLine()
-		let current_window = winnr()
-
-		windo set nocursorline
-		execute current_window . 'wincmd w'
-
-		setlocal cursorline
-
-		redir => old_hi
-			silent execute 'hi CursorLine'
-		redir END
-		let old_hi = split(old_hi, '\n')[0]
-		let old_hi = substitute(old_hi, 'xxx', '', '')
-
-		hi CursorLine guibg=#2a2a2a ctermbg=233
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#333333 ctermbg=235
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#3a3a3a ctermbg=237
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#444444 ctermbg=239
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#3a3a3a ctermbg=237
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#333333 ctermbg=235
-		redraw
-		sleep 10m
-
-		hi CursorLine guibg=#2a2a2a ctermbg=233
-		redraw
-		sleep 10m
-
-		execute 'hi ' . old_hi
-
-		windo set cursorline
-		execute current_window . 'wincmd w'
 	endfunction
   
 	call MakeSpacelessIabbrev('d', '$')
