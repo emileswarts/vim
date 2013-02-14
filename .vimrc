@@ -138,6 +138,7 @@
 		nnoremap ! :Clam<space>
 		vnoremap ! :ClamVisual<space>
 	"}}}
+	let g:ycm_add_preview_to_completeopt = 1
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -282,8 +283,8 @@ inoremap OO <Esc>O
 "}}}
 " D {{{
 	"php die function
-	vnoremap <leader>d "_dd
-	nnoremap <leader>d "_dd
+	"vnoremap <leader>d "_dd
+	"nnoremap <leader>d "_dd
 "}}}
 " E {{{
 	"echo function
@@ -339,7 +340,7 @@ inoremap OO <Esc>O
 	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
-	nnoremap <leader>t :TlistToggle<CR>
+	nnoremap <leader>t :!php tests/all-tests.php<CR>
 "}}}
 " U {{{
 	nnoremap <leader>u :GundoToggle<CR>
