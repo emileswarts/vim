@@ -497,3 +497,4 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 	let g:Powerline_symbols = 'fancy'
 	"}}}
 	
+
