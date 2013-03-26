@@ -144,7 +144,7 @@
 filetype plugin on
 
 set t_Co=256
-colorscheme skywalker
+colorscheme badwolf
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -341,7 +341,7 @@ inoremap <C-t> <C-x><C-t>
 	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
-	nnoremap <leader>t :!php tests/all-tests.php<CR>
+	nnoremap <leader>t :!rspec --color ~/bin/fizzbuzz_spec.rb<CR>
 "}}}
 " U {{{
 	nnoremap <leader>u :GundoToggle<CR>
@@ -496,5 +496,3 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
-	
-
