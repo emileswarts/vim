@@ -425,7 +425,11 @@ inoremap <C-t> <C-x><C-t>
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
 " RUBY {{{
-	autocmd FileType ruby set tabstop=2 
+	augroup ft_ruby 
+			set tabstop=2 
+			let tab_width=2 
+		set shiftwidth=2
+	augroup END
 " }}}
 " MUTT {{{
 au BufNewFile,BufRead *.muttrc set filetype=muttrc
