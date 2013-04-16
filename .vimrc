@@ -268,6 +268,7 @@ inoremap <C-t> <C-x><C-t>
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
 		nnoremap <leader>; <esc>mjA;<esc>'j 
+		nnoremap <leader><leader> :CtrlPBuffer<cr>
 		" Search forward with f key
 	"}}}
 	" A {{{
