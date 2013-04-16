@@ -86,7 +86,7 @@
 		let g:ctrlp_cache_dir = $HOME
 		let g:ctrlp_dotfiles = 1
 		let g:ctrlp_max_height = 30 
-		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*|/images/.*'
+		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*|/images/.*|/assets/.*'
 		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*
 		let g:ctrlp_by_filename = 0 
 		let g:ctrlp_working_path_mode = 0
@@ -144,7 +144,7 @@
 filetype plugin on
 
 set t_Co=256
-colorscheme skywalker
+colorscheme badwolf
  
 "Invisible character colors
 highlight NonText guifg=#4a4a59
