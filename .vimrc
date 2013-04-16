@@ -268,6 +268,7 @@ inoremap <C-t> <C-x><C-t>
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
 		nnoremap <leader>; <esc>mjA;<esc>'j 
+		nnoremap <leader><leader> :CtrlPBuffer<cr>
 		" Search forward with f key
 	"}}}
 	" A {{{
@@ -341,7 +342,7 @@ inoremap <C-t> <C-x><C-t>
 	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
-	nnoremap <leader>t :!php tests/all-tests.php<CR>
+	nnoremap <leader>t :!rspec --color ~/bin/fizzbuzz_spec.rb<CR>
 "}}}
 " U {{{
 	nnoremap <leader>u :GundoToggle<CR>
@@ -425,7 +426,11 @@ inoremap <C-t> <C-x><C-t>
 	let g:user_zen_leader_key = '<c-y>'
 "}}}
 " RUBY {{{
-	autocmd FileType ruby set tabstop=2 
+	augroup ft_ruby 
+			set tabstop=2 
+			let tab_width=2 
+		set shiftwidth=2
+	augroup END
 " }}}
 " MUTT {{{
 au BufNewFile,BufRead *.muttrc set filetype=muttrc
@@ -496,5 +501,3 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
-	
-
