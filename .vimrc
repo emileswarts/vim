@@ -21,7 +21,7 @@
 	set shiftround
 	set dictionary=/usr/share/dict/cracklib-small
 	set encoding=utf-8
-	let tab_width=4
+	let tab_width=2
 	set guioptions-=T
 	set guioptions-=T  "remove toolbar
 	set guioptions-=m  "remove menu bar
@@ -39,18 +39,19 @@
 	set nobackup "no backups
 	set nocompatible
 	set nolist
+	set expandtab
 	set noswapfile
 	set novisualbell
 	set number
 	set ruler
 	set scrolloff=0
 	set shell=/bin/zsh
-	set shiftwidth=4
+	set shiftwidth=2
 	set shortmess=atI
 	set smartcase
 	set smartindent
 	set spelllang=en_gb  "spell checking
-	set tabstop=4
+	set tabstop=2
 	set tags+=tags;$HOME
 	set textwidth=150
 	set title
