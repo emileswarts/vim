@@ -62,8 +62,6 @@
 	set wrapmargin=150
 	let mapleader = ","
 	let maplocalleader = "\\"
-	let php_sql_query=1                                                                                        
-	let php_htmlInStrings=1
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -111,19 +109,6 @@
 		let g:window_use_horiz = 0
 		let g:window_use_bottom = 0
 		let g:window_use_right = 1
-	"}}}
-	" PHP {{{
-		let php_sql_query = 1
-		let php_htmlInStrings = 1
-		let php_baselib = 1
-		let php_special_vars = 1
-		let php_special_functions = 1
-		let php_alt_comparisons = 1
-		let php_highlight_quotes = 1
-		let php_show_semicolon = 1
-		let php_smart_semicolon = 1
-		let php_show_semicolon_error = 1
-		let g:rbpt_max = 16
 	"}}}
 	"Syntastic {{{
 	
@@ -285,7 +270,6 @@ inoremap <C-t> <C-x><C-t>
 	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
 "}}}
 " D {{{
-	"php die function
 	"vnoremap <leader>d "_dd
 	"nnoremap <leader>d "_dd
 "}}}
@@ -412,20 +396,6 @@ inoremap <C-t> <C-x><C-t>
 		au BufNewFile,BufRead *.sql set filetype=sql
 	augroup END
 " }}}
-" PHP {{{
-
-		let s:php_executable = "/usr/bin/php"
-		if !(executable(s:php_executable))
-		let makeprg = php_executable . " -l %"
-	endif
-
-
-	au BufRead *.php set ft=php.html
-	au BufNewFile *.php set ft=php.html
-	"php cheat for tags
-	autocmd FileType php let b:surround_45 = "<?php \r ?>"
-	let g:user_zen_leader_key = '<c-y>'
-"}}}
 " RUBY {{{
 	augroup ft_ruby 
 			set tabstop=2 
