@@ -80,14 +80,14 @@
 " PLUGINS {{{
 	" CTRLP {{{
 		let g:ctrlp_use_caching = 1
-		let g:ctrlp_clear_cache_on_exit = 1 
+		let g:ctrlp_clear_cache_on_exit = 1
 		let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
 		let g:ctrlp_cache_dir = $HOME
 		let g:ctrlp_dotfiles = 1
-		let g:ctrlp_max_height = 30 
+		let g:ctrlp_max_height = 30
 		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*|/images/.*|/assets/.*'
 		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*
-		let g:ctrlp_by_filename = 0 
+		let g:ctrlp_by_filename = 0
 		let g:ctrlp_working_path_mode = 0
 		let g:ctrlp_match_window_reversed = 1
 		let g:ctrlp_split_window = 0
@@ -101,17 +101,6 @@
 		\ 'PrtClearCache()':      ['<c-space>'],
 		\ 'ToggleFocus()':        ['<c-tab>'],
 		\ }
-	"}}}
-	" Db {{{
-		let g:dbext_default_profile_mysql_local= 'type=MYSQL:user=kp:driver=mysql'
-		let g:dbext_default_buffer_lines = 15
-		let g:dbext_default_DBI_orientation = 'vertical'
-		let g:window_use_horiz = 0
-		let g:window_use_bottom = 0
-		let g:window_use_right = 1
-	"}}}
-	"Syntastic {{{
-	
 	"}}}
 	" Taglist {{{
 		let Tlist_Use_Right_Window=1
@@ -131,7 +120,7 @@ filetype plugin on
 
 set t_Co=256
 colorscheme badwolf
- 
+
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -141,7 +130,7 @@ let &t_SI="]12;\#89b6e2\x7"
 let &t_EI="]12;\#dd4010\x7"
 
 au VimLeave * silent !echo -ne "]12;\#dd4010\x7"
-au BufNewFile,BufRead /etc/httpd/* setf apache  
+au BufNewFile,BufRead /etc/httpd/* setf apache
 syntax on
 "}}}
 "REMAP KEYS{{{
@@ -159,20 +148,14 @@ syntax on
 	nnoremap & :&&<CR>
 	xnoremap & :&&<CR>
 
-	" But make it easy to switch it to 2 or 4 spaces
-	nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
-	nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
-
 	nnoremap ' `
-	nnoremap ` ' 
+	nnoremap ` '
 
 	map <tab> %
 
 	"escape to normal mode
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
-
-	vmap <C-a> S{iif()<ESC>i
 
 	"find next occurrence of f or t
 	nnoremap e ;
@@ -192,7 +175,7 @@ syntax on
 
 	"change behaviour of k to *
 	noremap K *
-	 
+
 	noremap j gj
 	noremap k gk
 	noremap n nzz
@@ -208,7 +191,7 @@ syntax on
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
-	cnoremap vv tab sview 
+	cnoremap vv tab sview
 
 	"easy to reach keys
 	"noremap H ^
@@ -241,7 +224,7 @@ syntax on
 	nnoremap <C-l> <C-w>l
 
 	inoremap <C-t> <C-x><C-k>
-	
+
     " Open a Quickfix window for the last search.
 	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
@@ -253,18 +236,16 @@ inoremap <C-t> <C-x><C-t>
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
-		nnoremap <leader>; <esc>mjA;<esc>'j 
+		nnoremap <leader>; <esc>mjA;<esc>'j
 		nnoremap <leader><leader> :CtrlPBuffer<cr>
 		" Search forward with f key
 	"}}}
 	" A {{{
 		nnoremap <leader>a :Ack!<space>
 	"nnoremap <leader>a [I
-	"vnoremap <leader>a [I 
+	"vnoremap <leader>a [I
 	"}}}
 	" B {{{
-		"FATBEEHIVE bk_debug function
-		vnoremap <leader>b yo<ESC>ibk_debug(<ESC>pli<ESC>A);<ESC>jk
 "}}}
 " C {{{
 	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
@@ -277,7 +258,7 @@ inoremap <C-t> <C-x><C-t>
 	"echo function
 	nnoremap <leader>e :Errors<CR>
 	"blog
-	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR> 
+	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
 	"velvet colorscheme
 	nnoremap <leader>ec :vsp ~/skywalker/skywalker.vim<CR>
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
@@ -286,10 +267,9 @@ inoremap <C-t> <C-x><C-t>
 "}}}
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
-
 "}}}
 " H {{{
-	nnoremap <leader>h :!hg addremove && hg ci<cr> 
+	nnoremap <leader>h :!hg addremove && hg ci<cr>
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
@@ -318,7 +298,7 @@ inoremap <C-t> <C-x><C-t>
 	nnoremap <leader>q :q!<CR>
 "}}}
 " R {{{
-	nnoremap <leader>r :YRShow<CR> 
+	nnoremap <leader>r :YRShow<CR>
 "}}}
 " S {{{
 	nnoremap <leader>S :mksession ~/vs/
@@ -352,18 +332,11 @@ inoremap <C-t> <C-x><C-t>
 "}}}
 "}}}
 "LOCAL LEADER FUNCTIONS {{{
- 
 "}}}
 " FILETYPE SPECIFIC {{{
-" ALL {{{
-	"source vim file when saving
-	if has("autocmd")
-	 autocmd bufwritepost .vimrc source $MYVIMRC
-	endif
-"}}}
 " CSS {{{
 	 augroup ft_css
-		nnoremap <leader>i 0f;i !important<ESC>0 
+		nnoremap <leader>i 0f;i !important<ESC>0
 		au!
 
 		au BufNewFile,BufRead *.less setlocal filetype=less
@@ -397,9 +370,9 @@ inoremap <C-t> <C-x><C-t>
 	augroup END
 " }}}
 " RUBY {{{
-	augroup ft_ruby 
-			set tabstop=2 
-			let tab_width=2 
+	augroup ft_ruby
+			set tabstop=2
+			let tab_width=2
 		set shiftwidth=2
 	augroup END
 " }}}
@@ -438,13 +411,9 @@ iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
 iabbrev ecoh echo
-iabbrev bk bk_debug("...");
-
 "}}}
 " FUNCTIONS {{{
-
 " Ack for the last search.
-nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
 	function! EatChar(pat)
 		let c = nr2char(getchar(0))
@@ -454,8 +423,7 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 	function! MakeSpacelessIabbrev(from, to)
 		execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 	endfunction
-  
-	call MakeSpacelessIabbrev('d', '$')
+
 	call MakeSpacelessIabbrev('pnd', '£')
 
 	" Show syntax highlighting groups for word under cursor
@@ -472,3 +440,10 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+      %s/\s\+$//e
+endfunction
+
+autocmd BufWritePre * :call TrimWhiteSpace()
