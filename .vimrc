@@ -232,6 +232,7 @@ syntax on
 inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
 inoremap <C-t> <C-x><C-t>
+inoremap <c-v> <C-g>s=
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
@@ -373,7 +374,7 @@ inoremap <C-t> <C-x><C-t>
 	augroup ft_ruby
 			set tabstop=2
 			let tab_width=2
-		set shiftwidth=2
+      set shiftwidth=2
 	augroup END
 " }}}
 " MUTT {{{
