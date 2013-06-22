@@ -288,8 +288,8 @@ inoremap <c-v> <C-g>s=
 "}}}
 " P {{{
 	"paste from system clipboard
-	nnoremap <leader>p "+p
-	vnoremap <leader>p "+p
+	nnoremap <leader>p "*p
+	vnoremap <leader>p "*p
 "}}}
 " Q {{{
 	"quit
@@ -323,7 +323,7 @@ inoremap <c-v> <C-g>s=
 "}}}
 " Y {{{
 	"copy to system clipboard
-	vnoremap <leader>y "+y
+	vnoremap <leader>y "*y
 "}}}
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
