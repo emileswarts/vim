@@ -58,7 +58,7 @@
 	set wildmode=list:longest "when pressing tab see as many options as possible
 	set wrapmargin=150
 	let mapleader = ","
-  :set timeout timeoutlen=1000 ttimeoutlen=100
+	let maplocalleader = "\\"
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -99,9 +99,16 @@
 		\ 'ToggleFocus()':        ['<c-tab>'],
 		\ }
 	"}}}
+	" Taglist {{{
+		let Tlist_Use_Right_Window=1
+	"}}}
 	" Yankring {{{
 		let g:yankring_window_use_bottom = 0
 		let g:yankring_window_height = 15
+	"}}}
+	" Clam {{{
+		nnoremap ! :Clam<space>
+		vnoremap ! :ClamVisual<space>
 	"}}}
 	let g:ycm_add_preview_to_completeopt = 1
 "}}}
@@ -130,6 +137,10 @@ syntax on
 	vnoremap / /\V
 	nnoremap ? ?\V
 	vnoremap ? ?\V
+
+	"Bubble single lines
+	nnoremap <C-UP> ddkP
+	nnoremap <C-Down> ddp
 
 	nnoremap & :&&<CR>
 	xnoremap & :&&<CR>
@@ -173,6 +184,7 @@ syntax on
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
 	"nnoremap n nzzzv<cr>
+	"nnoremap N Nzzzv:call PulseCursorLine()<cr>
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
@@ -195,6 +207,13 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
+	"increase and decrease window size
+	map <left> 10<C-w><
+	map <down> 10<C-w>-
+	map <up> <C-w>+
+	map <right> 10<C-w>>
+	map <C-space> <C-w>=
+
 	"switching between windows
 	nnoremap <C-h> <C-w>h
 	nnoremap <C-j> <C-w>j
@@ -215,6 +234,7 @@ inoremap <c-v> <C-g>s=
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
+		nnoremap <leader>; <esc>mjA;<esc>'j
 		nnoremap <leader><leader> :CtrlPBuffer<cr>
 		" Search forward with f key
 	"}}}
@@ -234,11 +254,20 @@ inoremap <c-v> <C-g>s=
 "}}}
 " E {{{
 	"echo function
+	nnoremap <leader>e :Errors<CR>
+	"blog
+	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
+	"velvet colorscheme
+	nnoremap <leader>ec :vsp ~/skywalker/skywalker.vim<CR>
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
+	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
+"}}}
+" H {{{
+	nnoremap <leader>h :!hg addremove && hg ci<cr>
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
@@ -248,6 +277,7 @@ inoremap <c-v> <C-g>s=
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
 	nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
+	vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
 	"set line numbers
@@ -272,8 +302,13 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>S :mksession ~/vs/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
+	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
+	nnoremap <leader>t :!rspec --color ~/bin/fizzbuzz_spec.rb<CR>
+"}}}
+" U {{{
+	nnoremap <leader>u :GundoToggle<CR>
 "}}}
 " V {{{
 	"select a variable
@@ -317,8 +352,10 @@ inoremap <c-v> <C-g>s=
 		augroup END
 "}}}
 " HTML {{{
+	    au BufRead *.html :normal gg=G
 " }}}
 " {{{ MARKDOWN
+
 	 augroup ft_md
 		au BufNewFile,BufRead *.md setlocal filetype=markdown
 	augroup END
@@ -341,12 +378,17 @@ inoremap <c-v> <C-g>s=
 au BufNewFile,BufRead *.muttrc set filetype=muttrc
 " }}}
 " Pentadactyl {{{
+
 augroup ft_pentadactyl
     au!
     au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
     au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
 augroup END
+
 " }}}
+" TWIG {{{
+	au BufNewFile,BufRead *.twig set filetype=twig
+"}}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
 "}}}
@@ -369,6 +411,30 @@ iabbrev teh the
 iabbrev ecoh echo
 "}}}
 " FUNCTIONS {{{
+" Ack for the last search.
+
+	function! EatChar(pat)
+		let c = nr2char(getchar(0))
+		return (c =~ a:pat) ? '' : c
+	endfunction
+
+	function! MakeSpacelessIabbrev(from, to)
+		execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
+	endfunction
+
+	call MakeSpacelessIabbrev('pnd', '£')
+
+	" Show syntax highlighting groups for word under cursor
+	nmap <leader>b :call <SID>SynStack()<CR>
+
+	function! <SID>SynStack()
+		if !exists("*synstack")
+			return
+		endif
+		echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	endfunc
+
+	"}}}
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
@@ -379,4 +445,3 @@ function! TrimWhiteSpace()
 endfunction
 
 autocmd BufWritePre * :call TrimWhiteSpace()
-
