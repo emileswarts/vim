@@ -99,16 +99,9 @@
 		\ 'ToggleFocus()':        ['<c-tab>'],
 		\ }
 	"}}}
-	" Taglist {{{
-		let Tlist_Use_Right_Window=1
-	"}}}
 	" Yankring {{{
 		let g:yankring_window_use_bottom = 0
 		let g:yankring_window_height = 15
-	"}}}
-	" Clam {{{
-		nnoremap ! :Clam<space>
-		vnoremap ! :ClamVisual<space>
 	"}}}
 	let g:ycm_add_preview_to_completeopt = 1
 "}}}
@@ -239,16 +232,12 @@ inoremap <c-v> <C-g>s=
 		" Search forward with f key
 	"}}}
 	" A {{{
-		nnoremap <leader>a :Ack!<space>
 	"}}}
 	" B {{{
 "}}}
 " C {{{
-	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
 "}}}
 " D {{{
-	"vnoremap <leader>d "_dd
-	"nnoremap <leader>d "_dd
 "}}}
 " E {{{
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
@@ -292,10 +281,16 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>S :mksession ~/vs/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
-	nnoremap <leader>sc :SyntasticToggleMode<cr>
 "}}}
 " T {{{
-	nnoremap <leader>t :!rspec --color ~/bin/fizzbuzz_spec.rb<CR>
+	nnoremap <leader>tv :CtrlP app/views<cr>
+	nnoremap <leader>tc :CtrlP app/controllers<cr>
+	nnoremap <leader>td :CtrlP db<cr>
+	nnoremap <leader>tl :CtrlP lib<cr>
+	nnoremap <leader>tg :vsp Gemfile<cr>
+	nnoremap <leader>tm :CtrlP app/models<cr>
+	nnoremap <leader>tf :CtrlP features<cr>
+	nnoremap <leader>ts :CtrlP features/step_definitions<cr>
 "}}}
 " U {{{
 	nnoremap <leader>u :GundoToggle<CR>
@@ -363,15 +358,6 @@ inoremap <c-v> <C-g>s=
 " MUTT {{{
 au BufNewFile,BufRead *.muttrc set filetype=muttrc
 " }}}
-" Pentadactyl {{{
-
-augroup ft_pentadactyl
-    au!
-    au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
-    au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
-augroup END
-
-" }}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
 "}}}
@@ -386,22 +372,21 @@ augroup END
 "}}}
 "}}}
 " ABBREVIATIONS {{{
-iabbrev functino function
-iabbrev adn and
-iabbrev waht what
-iabbrev tehn then
-iabbrev teh the
-iabbrev ecoh echo
+  iabbrev functino function
+  iabbrev adn and
+  iabbrev waht what
+  iabbrev tehn then
+  iabbrev teh the
+  iabbrev ecoh echo
 "}}}
 " FUNCTIONS {{{
-	"}}}
-	" STATUS LINE {{{
-	let g:Powerline_symbols = 'fancy'
-	"}}}
-
 " Removes trailing spaces
 function! TrimWhiteSpace()
       %s/\s\+$//e
 endfunction
 
 autocmd BufWritePre * :call TrimWhiteSpace()
+	"}}}
+	" STATUS LINE {{{
+	let g:Powerline_symbols = 'fancy'
+	"}}}
