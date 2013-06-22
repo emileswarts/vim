@@ -22,11 +22,8 @@
 	set dictionary=/usr/share/dict/cracklib-small
 	set encoding=utf-8
 	let tab_width=2
-	set guioptions-=T
-	set guioptions-=T  "remove toolbar
-	set guioptions-=m  "remove menu bar
-	set guioptions-=r  "remove right-hand scroll bar
 	set hidden
+  set t_ti= t_te= "keep vim on the screen when sending to background
 	set history=9000
 	set hlsearch
 	set ignorecase
