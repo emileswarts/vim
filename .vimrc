@@ -226,7 +226,7 @@ inoremap <c-v> <C-g>s=
 	" B {{{
 "}}}
 " C {{{
-	nmap <silent> <leader>c :ClearCtrlPCache<cr>;echom "cache cleared"
+	nnoremap <leader>c
 "}}}
 " D {{{
 	"vnoremap <leader>d "_dd
