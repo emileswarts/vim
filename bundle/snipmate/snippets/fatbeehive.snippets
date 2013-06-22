@@ -1,0 +1,39 @@
+#Fatbeehive Snippets
+#DB
+snippet db getVar
+	$col = $db->getvar('select ${1:column} from ${2:table} where ${3} = ${4}');
+	if($col != '')
+	{
+		echo $col;
+	}
+snippet db getRow
+	$results = $db->get_row('select ${1:column} from ${2:table} where ${3} = ${4}');
+	if(is_array($results))
+	{
+		foreach($results as $result)
+		{
+		  echo $result->${5};	
+		}
+	}
+snippet db getResults
+	$results = $db->get_results('select ${1:column} from ${2:table} where ${3} = ${4}');
+	if(is_array($results))
+	{
+		foreach($results as $result)
+		{
+		  echo $result->${5};	
+		}
+	}
+#IMG
+snippet img toWidth                                                                                                                     
+	$image = ${2:$row->image} ? "<img src='/img.php?f=$${2:$row->image}&amp;p=toWidth&amp;o=jpg&amp;a[width]=${3}' />" : "";    
+snippet img toHeight                                                                                                                     
+	$image = ${2:$row->image} ? "<img src='/img.php?f=$${2:$row->image}}&amp;p=toHeight&amp;o=jpg&amp;a[height]=${3}' />" : "";                                       
+snippet img cropTo                                                                                                                    
+	$image = ${2:$row->image} ? "<img src='/img.php?f=$${2:$row->image}}&amp;p=cropTo&amp;o=jpg&amp;a[height]=${3};a[width]=${4}' />" : "";                            
+snippet img shToWidth                                                                                                                                                   
+	$image = ${2:$row->image} ? "<img src='/img.php?f=$${2:$row->image}}&amp;p=shrinkToWidth&amp;o=jpg&amp;[width]=${3}' />" : "";
+
+#new stuff
+#function calls
+#snippet rts renderTimeSelector($arg_value = false, $arg_name = 'time', $clock24 = false)
