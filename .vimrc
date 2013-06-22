@@ -240,8 +240,6 @@ inoremap <c-v> <C-g>s=
 	"}}}
 	" A {{{
 		nnoremap <leader>a :Ack!<space>
-	"nnoremap <leader>a [I
-	"vnoremap <leader>a [I
 	"}}}
 	" B {{{
 "}}}
@@ -253,21 +251,13 @@ inoremap <c-v> <C-g>s=
 	"nnoremap <leader>d "_dd
 "}}}
 " E {{{
-	"echo function
-	nnoremap <leader>e :Errors<CR>
-	"blog
-	nnoremap <leader>eb :e ~/emileswarts.github.com/_posts<CR>
-	"velvet colorscheme
-	nnoremap <leader>ec :vsp ~/skywalker/skywalker.vim<CR>
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
-	nnoremap <leader>ex :vsp ~/.xmonad/xmonad.hs<CR>
 "}}}
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
 " H {{{
-	nnoremap <leader>h :!hg addremove && hg ci<cr>
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
@@ -322,7 +312,6 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>x :se readonly<CR>
 "}}}
 " Y {{{
-	"copy to system clipboard
 	vnoremap <leader>y "*y
 "}}}
 " Z {{{
@@ -352,17 +341,14 @@ inoremap <c-v> <C-g>s=
 		augroup END
 "}}}
 " HTML {{{
-	    au BufRead *.html :normal gg=G
 " }}}
 " {{{ MARKDOWN
-
 	 augroup ft_md
 		au BufNewFile,BufRead *.md setlocal filetype=markdown
 	augroup END
 " }}}
 " MYSQL {{{
 	augroup ft_sql
-		"so ~/.vim/secure.vim
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
 	augroup END
@@ -386,9 +372,6 @@ augroup ft_pentadactyl
 augroup END
 
 " }}}
-" TWIG {{{
-	au BufNewFile,BufRead *.twig set filetype=twig
-"}}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
 "}}}
@@ -411,29 +394,6 @@ iabbrev teh the
 iabbrev ecoh echo
 "}}}
 " FUNCTIONS {{{
-" Ack for the last search.
-
-	function! EatChar(pat)
-		let c = nr2char(getchar(0))
-		return (c =~ a:pat) ? '' : c
-	endfunction
-
-	function! MakeSpacelessIabbrev(from, to)
-		execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
-	endfunction
-
-	call MakeSpacelessIabbrev('pnd', '£')
-
-	" Show syntax highlighting groups for word under cursor
-	nmap <leader>b :call <SID>SynStack()<CR>
-
-	function! <SID>SynStack()
-		if !exists("*synstack")
-			return
-		endif
-		echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-	endfunc
-
 	"}}}
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
