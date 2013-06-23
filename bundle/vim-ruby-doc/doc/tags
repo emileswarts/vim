@@ -1,0 +1,14 @@
+:RailsDoc	ruby-doc.txt	/*:RailsDoc*
+:RspecDoc	ruby-doc.txt	/*:RspecDoc*
+:RubyDoc	ruby-doc.txt	/*:RubyDoc*
+g:ruby_doc_command	ruby-doc.txt	/*g:ruby_doc_command*
+g:ruby_doc_rails_mapping	ruby-doc.txt	/*g:ruby_doc_rails_mapping*
+g:ruby_doc_rails_search_host	ruby-doc.txt	/*g:ruby_doc_rails_search_host*
+g:ruby_doc_rspec_mapping	ruby-doc.txt	/*g:ruby_doc_rspec_mapping*
+g:ruby_doc_rspec_search_host	ruby-doc.txt	/*g:ruby_doc_rspec_search_host*
+g:ruby_doc_ruby	ruby-doc.txt	/*g:ruby_doc_ruby*
+g:ruby_doc_ruby_host	ruby-doc.txt	/*g:ruby_doc_ruby_host*
+ruby-doc-configuration	ruby-doc.txt	/*ruby-doc-configuration*
+ruby-doc-copyright	ruby-doc.txt	/*ruby-doc-copyright*
+ruby-doc-introduction	ruby-doc.txt	/*ruby-doc-introduction*
+ruby-doc.txt	ruby-doc.txt	/*ruby-doc.txt*

@@ -26,6 +26,7 @@
   set t_ti= t_te= "keep vim on the screen when sending to background
 	set history=9000
 	set hlsearch
+	set fileformats=unix,dos
 	set ignorecase
 	set incsearch
 	set showcmd
@@ -73,6 +74,8 @@
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 	endif
+
+ let g:ruby_doc_command='open'
 
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | set wrap
@@ -283,7 +286,7 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>q :q!<CR>
 "}}}
 " R {{{
-	nnoremap <leader>r :YRShow<CR>
+	" nnoremap <leader>r :YRShow<CR>
 "}}}
 " S {{{
 	nnoremap <leader>S :mksession ~/vs/
