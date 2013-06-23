@@ -63,16 +63,22 @@
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 	if has("autocmd")
 		autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 		autocmd FileType let g:rubycomplete_buffer_loading=1
 		autocmd FileType let g:rubycomplete_classes_in_global=1
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 	endif
+
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | set wrap
+  au BufRead,BufNewFile *.json set ft=javascript
+  au BufRead,BufNewFile *.scss set filetype=scss
+
 "}}}
 " PLUGINS {{{
 	" CTRLP {{{
@@ -238,6 +244,7 @@ inoremap <c-v> <C-g>s=
 " C {{{
 "}}}
 " D {{{
+  nnoremap <leader>d :vsp<cr>
 "}}}
 " E {{{
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
@@ -247,6 +254,7 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
 " H {{{
+  nnoremap ,h :!ruby %<cr>
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
