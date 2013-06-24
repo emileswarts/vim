@@ -241,6 +241,7 @@ inoremap <c-v> <C-g>s=
 		" Search forward with f key
 	"}}}
 	" A {{{
+  nnoremap ,a <C-^>
 	"}}}
 	" B {{{
 "}}}
