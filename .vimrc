@@ -142,6 +142,8 @@ syntax on
 	nnoremap ? ?\V
 	vnoremap ? ?\V
 
+	vnoremap <leader>/ y:Ag <c-r>"<cr>
+
 	"Bubble single lines
 	nnoremap <C-UP> ddkP
 	nnoremap <C-Down> ddp
