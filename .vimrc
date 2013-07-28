@@ -140,6 +140,9 @@ syntax on
 	nnoremap ? ?\V
 	vnoremap ? ?\V
 
+  vnoremap <silent> * :call VisualSelection('f')<CR>
+  vnoremap <silent> # :call VisualSelection('b')<CR>
+
 	"Bubble single lines
 	nnoremap <C-UP> ddkP
 	nnoremap <C-Down> ddp
@@ -169,6 +172,7 @@ syntax on
 
 	"Make D act normally
 	nmap D d$
+
 
 	nnoremap S i<CR><esc><right>
 
@@ -214,7 +218,6 @@ syntax on
 	map <down> 10<C-w>-
 	map <up> <C-w>+
 	map <right> 10<C-w>>
-	map <C-space> <C-w>=
 
 	"switching between windows
 	nnoremap <C-h> <C-w>h
@@ -402,3 +405,27 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
+
+
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
