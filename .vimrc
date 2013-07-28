@@ -27,7 +27,9 @@
 	set history=9000
 	set hlsearch
 	set fileformats=unix,dos
+	set eol
 	set ignorecase
+	set nobinary
 	set incsearch
 	set showcmd
 	set showmode
@@ -270,8 +272,8 @@ inoremap <c-v> <C-g>s=
 " M {{{
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
-	nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
-	vnoremap <leader>M :marks<CR>
+	" nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
+	" vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
 	"set line numbers
@@ -298,6 +300,7 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>ss :set spell!<cr>
 "}}}
 " T {{{
+	nnoremap <leader>ta :CtrlP app<cr>
 	nnoremap <leader>tv :CtrlP app/views<cr>
 	nnoremap <leader>tc :CtrlP app/controllers<cr>
 	nnoremap <leader>td :CtrlP db<cr>
