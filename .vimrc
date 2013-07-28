@@ -135,22 +135,11 @@ au BufNewFile,BufRead /etc/httpd/* setf apache
 syntax on
 "}}}
 "REMAP KEYS{{{
-
-	" Use sane regexes.
+	" Use literal match by default
 	nnoremap / /\V
 	vnoremap / /\V
 	nnoremap ? ?\V
 	vnoremap ? ?\V
-
-  vnoremap <silent> * :call VisualSelection('f')<CR>
-  vnoremap <silent> # :call VisualSelection('b')<CR>
-
-	"Bubble single lines
-	nnoremap <C-UP> ddkP
-	nnoremap <C-Down> ddp
-
-	nnoremap & :&&<CR>
-	xnoremap & :&&<CR>
 
 	nnoremap ' `
 	nnoremap ` '
@@ -160,9 +149,6 @@ syntax on
 	"escape to normal mode
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
-
-	"find next occurrence of f or t
-	nnoremap e ;
 
 	"make switching tabs easier
 	nnoremap EN gT
@@ -175,11 +161,10 @@ syntax on
 	"Make D act normally
 	nmap D d$
 
-
 	nnoremap S i<CR><esc><right>
 
 	"change behaviour of k to *
-	noremap K *
+	noremap K *zz
 
 	noremap j gj
 	noremap k gk
@@ -187,26 +172,22 @@ syntax on
 	noremap N Nzz
 	noremap H H
 	noremap U <C-R>
-	noremap * *zz
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
-	"nnoremap n nzzzv<cr>
-	"nnoremap N Nzzzv:call PulseCursorLine()<cr>
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
 	cnoremap vv tab sview
 
 	"easy to reach keys
-	"noremap H ^
-	"noremap L $
-	noremap Y "+y$
+	noremap Y "*yy
 
 	nnoremap S i<cr><esc><right>
 
 	"Create space underneath line
 	nnoremap - mz<esc>o<esc>'z
+
 	"Create space above line
 	nnoremap _ mz<esc>O<esc>'z
 	inoremap <c-d> <esc>ddi
@@ -215,33 +196,19 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
-	"increase and decrease window size
-	map <left> 10<C-w><
-	map <down> 10<C-w>-
-	map <up> <C-w>+
-	map <right> 10<C-w>>
-
 	"switching between windows
 	nnoremap <C-h> <C-w>h
 	nnoremap <C-j> <C-w>j
 	nnoremap <C-k> <C-w>k
 	nnoremap <C-l> <C-w>l
-
-	inoremap <C-t> <C-x><C-k>
-
-    " Open a Quickfix window for the last search.
-	nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "}}}
 "INSERT MODE{{{
 inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
-inoremap <C-t> <C-x><C-t>
-inoremap <c-v> <C-g>s=
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
-		nnoremap <leader>; <esc>mjA;<esc>'j
 		nnoremap <leader><leader> :CtrlPBuffer<cr>
 		" Search forward with f key
 	"}}}
@@ -263,7 +230,6 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
 " H {{{
-  nnoremap ,h :!ruby %<cr>
 "}}}
 " L {{{
 	" Shortcut to rapidly toggle `set list`
@@ -272,8 +238,6 @@ inoremap <c-v> <C-g>s=
 " M {{{
 	"show all lines with word under cursor
 	let g:ctrlp_map = '<leader>m'
-	" nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
-	" vnoremap <leader>M :marks<CR>
 "}}}
 " N {{{
 	"set line numbers
@@ -295,7 +259,6 @@ inoremap <c-v> <C-g>s=
 	" nnoremap <leader>r :YRShow<CR>
 "}}}
 " S {{{
-	nnoremap <leader>S :mksession ~/vs/
 	nnoremap <leader>s :source ~/.vimrc<CR>
 	nnoremap <leader>ss :set spell!<cr>
 "}}}
@@ -303,18 +266,22 @@ inoremap <c-v> <C-g>s=
 	nnoremap <leader>ta :CtrlP app<cr>
 	nnoremap <leader>tv :CtrlP app/views<cr>
 	nnoremap <leader>tc :CtrlP app/controllers<cr>
-	nnoremap <leader>td :CtrlP db<cr>
-	nnoremap <leader>tl :CtrlP lib<cr>
-	nnoremap <leader>tg :vsp Gemfile<cr>
 	nnoremap <leader>tm :CtrlP app/models<cr>
+
+	nnoremap <leader>tk :CtrlP config/<cr>
+	nnoremap <leader>td :CtrlP db<cr>
+	nnoremap <leader>tg :vsp Gemfile<cr>
+	nnoremap <leader>tl :CtrlP lib<cr>
+
 	nnoremap <leader>tf :CtrlP features<cr>
 	nnoremap <leader>ts :CtrlP features/step_definitions<cr>
+	nnoremap <leader>te :CtrlP features/factories<cr>
+	nnoremap <leader>tu :CtrlP features/support<cr>
 "}}}
 " U {{{
-	nnoremap <leader>u :GundoToggle<CR>
 "}}}
 " V {{{
-	"select a variable
+  "select to end of line
 	nnoremap <leader>v v$
 "}}}
 " W {{{
@@ -338,15 +305,6 @@ inoremap <c-v> <C-g>s=
 	 augroup ft_css
 		nnoremap <leader>i 0f;i !important<ESC>0
 		au!
-
-		au BufNewFile,BufRead *.less setlocal filetype=less
-
-		au Filetype less,css setlocal foldmethod=marker
-		au Filetype less,css setlocal foldmarker={,}
-		au Filetype less,css setlocal omnifunc=csscomplete#CompleteCSS
-		au Filetype less,css setlocal iskeyword+=-
-
-		au BufNewFile,BufRead *.less,*.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 		" Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
 		" positioned inside of them AND the following code doesn't get unfolded.
@@ -374,7 +332,7 @@ inoremap <c-v> <C-g>s=
 	augroup END
 " }}}
 " MUTT {{{
-au BufNewFile,BufRead *.muttrc set filetype=muttrc
+    au BufNewFile,BufRead *.muttrc set filetype=muttrc
 " }}}
 " VAGRANT/PUPPET {{{
 		au BufNewFile,BufRead *.pp setlocal filetype=ruby
@@ -382,7 +340,6 @@ au BufNewFile,BufRead *.muttrc set filetype=muttrc
 " VIM {{{
 	augroup ft_vim
 		au!
-
 		au FileType vim setlocal foldmethod=marker
 		au FileType help setlocal textwidth=78
 		au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
@@ -395,7 +352,6 @@ au BufNewFile,BufRead *.muttrc set filetype=muttrc
   iabbrev waht what
   iabbrev tehn then
   iabbrev teh the
-  iabbrev ecoh echo
 "}}}
 " FUNCTIONS {{{
 " Removes trailing spaces
@@ -408,27 +364,3 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
-
-
-
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
