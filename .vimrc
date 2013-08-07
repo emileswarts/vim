@@ -19,7 +19,7 @@
 	set cursorline
 	set gdefault
 	set shiftround
-	set dictionary=/usr/share/dict/cracklib-small
+	set dictionary=/usr/share/dict/words
 	set encoding=utf-8
 	let tab_width=2
 	set hidden
