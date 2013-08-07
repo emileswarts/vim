@@ -172,6 +172,7 @@ syntax on
 	noremap N Nzz
 	noremap H H
 	noremap U <C-R>
+	noremap <C-X> :qall<cr>
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
