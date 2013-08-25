@@ -252,7 +252,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>q :q!<CR>
 "}}}
 " R {{{
-	" nnoremap <leader>r :YRShow<CR>
+	nnoremap <leader>r :YRShow<CR>
 "}}}
 " S {{{
 	nnoremap <leader>s :source ~/.vimrc<CR>
