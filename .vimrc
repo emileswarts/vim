@@ -150,14 +150,6 @@ syntax on
 	inoremap tn <ESC>
 	vnoremap tn <ESC>
 
-	"make switching tabs easier
-	nnoremap EN gT
-	vnoremap EN gT
-
-	"make switching tabs easier, backwards
-	nnoremap eN gt
-	vnoremap eN gt
-
 	"Make D act normally
 	nmap D d$
 
