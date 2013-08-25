@@ -219,6 +219,9 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
 "}}}
+" F {{{
+	nnoremap <leader>f 30<c-w>><CR>
+" }}}
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
