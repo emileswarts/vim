@@ -164,7 +164,6 @@ syntax on
 	noremap N Nzz
 	noremap H H
 	noremap U <C-R>
-	noremap <C-X> :qall<cr>
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
@@ -270,7 +269,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>tl :CtrlP lib<cr>
 
 	nnoremap <leader>tf :CtrlP features<cr>
-	nnoremap <leader>ts :CtrlP features/step_definitions<cr>
+	nnoremap <leader>ts :CtrlP spec/<cr>
 	nnoremap <leader>te :CtrlP features/factories<cr>
 	nnoremap <leader>tu :CtrlP features/support<cr>
 "}}}
