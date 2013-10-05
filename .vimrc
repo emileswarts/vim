@@ -66,6 +66,7 @@
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
+
 	if has("autocmd")
 		autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 		autocmd FileType let g:rubycomplete_buffer_loading=1
@@ -86,35 +87,15 @@
 
 "}}}
 " PLUGINS {{{
-	" CTRLP {{{
-		let g:ctrlp_use_caching = 1
-		let g:ctrlp_clear_cache_on_exit = 1
-		let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
-		let g:ctrlp_cache_dir = $HOME
-		let g:ctrlp_dotfiles = 1
-		let g:ctrlp_max_height = 30
-		let g:ctrlp_mruf_exclude = '/.hg/.*\|/data/.*|/images/.*|/assets/.*'
-		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*
-		let g:ctrlp_by_filename = 0
-		let g:ctrlp_working_path_mode = 0
-		let g:ctrlp_match_window_reversed = 1
-		let g:ctrlp_split_window = 0
-		let g:ctrlp_prompt_mappings = {
-		\ 'PrtSelectMove("j")':   ['<c-j>', '<down>', '<s-tab>'],
-		\ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
-		\ 'PrtHistory(-1)':       ['<c-n>'],
-		\ 'PrtHistory(1)':        ['<c-p>'],
-		\ 'PrtBS()':        	  ['<c-h>'],
-		\ 'PrtCurLeft()':         ['<left>'],
-		\ 'PrtClearCache()':      ['<c-space>'],
-		\ 'ToggleFocus()':        ['<c-tab>'],
-		\ }
-	"}}}
 	" Yankring {{{
 		let g:yankring_window_use_bottom = 0
 		let g:yankring_window_height = 15
 	"}}}
-	let g:ycm_add_preview_to_completeopt = 1
+  let g:CommandTWildIgnore=&wildignore . ",*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*"
+  let g:CommandTMaxHeight = 10
+
+  let g:CommandTCancelMap=['<ESC>', '<C-c>']
+  let g:CommandTHighlightColor="Pmenu"
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -202,7 +183,7 @@ inoremap <C-f> <C-x><C-f>
 " LEADER REMAP KEYS{{{
 	" MISC {{{
 		noremap <leader><space> :noh<cr>
-		nnoremap <leader><leader> :CtrlPBuffer<cr>
+		nnoremap <leader><leader> :CommandTBuffer<cr>
 		" Search forward with f key
 	"}}}
 	" A {{{
@@ -232,8 +213,6 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>l :set list!<CR>
 "}}}
 " M {{{
-	"show all lines with word under cursor
-	let g:ctrlp_map = '<leader>m'
 "}}}
 " N {{{
 	"set line numbers
@@ -259,20 +238,21 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>ss :set spell!<cr>
 "}}}
 " T {{{
-	nnoremap <leader>ta :CtrlP app<cr>
-	nnoremap <leader>tv :CtrlP app/views<cr>
-	nnoremap <leader>tc :CtrlP app/controllers<cr>
-	nnoremap <leader>tm :CtrlP app/models<cr>
+	nnoremap <leader>ta :CommandT app<cr>
+	nnoremap <leader>tv :CommandT app/views<cr>
+	nnoremap <leader>tc :CommandT app/controllers<cr>
+	nnoremap <leader>tm :CommandT app/models<cr>
 
-	nnoremap <leader>tk :CtrlP config/<cr>
-	nnoremap <leader>td :CtrlP db<cr>
+	nnoremap <leader>tk :CommandT config/<cr>
+	nnoremap <leader>td :CommandT db<cr>
 	nnoremap <leader>tg :vsp Gemfile<cr>
-	nnoremap <leader>tl :CtrlP lib<cr>
+	nnoremap <leader>tl :CommandT lib<cr>
 
-	nnoremap <leader>tf :CtrlP features<cr>
-	nnoremap <leader>ts :CtrlP features/step_definitions<cr>
-	nnoremap <leader>te :CtrlP features/factories<cr>
-	nnoremap <leader>tu :CtrlP features/support<cr>
+	nnoremap <leader>tf :CommandT features<cr>
+	nnoremap <leader>te :CommandT features/factories<cr>
+	nnoremap <leader>tu :CommandT features/support<cr>
+
+	nnoremap <leader>ts :CommandT spec<cr>
 "}}}
 " U {{{
 "}}}
