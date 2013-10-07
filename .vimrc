@@ -96,6 +96,8 @@
 
   let g:CommandTCancelMap=['<ESC>', '<C-c>']
   let g:CommandTHighlightColor="Pmenu"
+  let g:CommandTBackspaceMap='<C-h>'
+  let g:CommandTCursorLeftMap='<left>'
 "}}}
 " COLORS {{{
 filetype plugin on
@@ -145,7 +147,6 @@ syntax on
 	noremap N Nzz
 	noremap H H
 	noremap U <C-R>
-	noremap <C-X> :qall<cr>
 
 	" Keep search matches in the middle of the window and pulse the line when moving
 	" to them.
@@ -223,8 +224,8 @@ inoremap <C-f> <C-x><C-f>
 "}}}
 " P {{{
 	"paste from system clipboard
-	nnoremap <leader>p "*p
-	vnoremap <leader>p "*p
+	nnoremap <leader>p "+p
+	vnoremap <leader>p "+p
 "}}}
 " Q {{{
 	"quit
@@ -238,6 +239,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>ss :set spell!<cr>
 "}}}
 " T {{{
+	nnoremap <leader>m :CommandT<cr>
 	nnoremap <leader>ta :CommandT app<cr>
 	nnoremap <leader>tv :CommandT app/views<cr>
 	nnoremap <leader>tc :CommandT app/controllers<cr>
@@ -247,6 +249,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>td :CommandT db<cr>
 	nnoremap <leader>tg :vsp Gemfile<cr>
 	nnoremap <leader>tl :CommandT lib<cr>
+	nnoremap <leader>tr :vsp config/routes.rb<cr>
 
 	nnoremap <leader>tf :CommandT features<cr>
 	nnoremap <leader>te :CommandT features/factories<cr>
@@ -268,7 +271,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>x :se readonly<CR>
 "}}}
 " Y {{{
-	vnoremap <leader>y "*y
+	vnoremap <leader>y "+y
 "}}}
 " Z {{{
 	nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
