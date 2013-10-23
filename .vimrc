@@ -92,7 +92,7 @@
 		let g:yankring_window_height = 15
 	"}}}
   let g:CommandTWildIgnore=&wildignore . ",*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*"
-  let g:CommandTMaxHeight = 10
+  let g:CommandTMaxHeight = 20
 
   let g:CommandTCancelMap=['<ESC>', '<C-c>']
   let g:CommandTHighlightColor="Pmenu"
