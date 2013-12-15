@@ -187,6 +187,9 @@ inoremap <C-f> <C-x><C-f>
 		nnoremap <leader><leader> :CommandTBuffer<cr>
 		" Search forward with f key
 	"}}}
+  " 1 {{{
+  nnoremap ,1 i<% 100.times do %><esc>yypwct%end <esc>O<% p %><esc>hha
+  "}}}
 	" A {{{
   nnoremap ,a <C-^>
 	"}}}
