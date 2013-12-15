@@ -188,7 +188,8 @@ inoremap <C-f> <C-x><C-f>
 		" Search forward with f key
 	"}}}
   " 1 {{{
-  nnoremap ,1 i<% 100.times do %><esc>yypwct%end <esc>O<% p %><esc>hha
+  inoremap <c-q>v <% 100.times do %><esc>yypwct%end <esc>O<% p %><esc>hha
+  inoremap <c-q> 100.times do<esc>oend<C-o>Op
   "}}}
 	" A {{{
   nnoremap ,a <C-^>
