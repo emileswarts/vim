@@ -50,6 +50,8 @@
 	set shortmess=atI
 	set smartcase
 	set smartindent
+  set notimeout
+  set ttimeout
 	set spelllang=en_gb  "spell checking
 	set tabstop=2
 	set tags+=tags;$HOME
@@ -183,9 +185,8 @@ inoremap <C-f> <C-x><C-f>
 "}}}
 " LEADER REMAP KEYS{{{
 	" MISC {{{
-		noremap <leader><space> :noh<cr>
-		nnoremap <leader><leader> :CommandTBuffer<cr>
-		" Search forward with f key
+  noremap <leader><space> :noh<cr>
+  nnoremap <leader><leader> :CommandTBuffer<cr>
 	"}}}
   " 1 {{{
   inoremap <c-q>v <% 100.times do %><esc>yypwct%end <esc>O<% p %><esc>hha
@@ -194,10 +195,6 @@ inoremap <C-f> <C-x><C-f>
 	" A {{{
   nnoremap ,a <C-^>
 	"}}}
-	" B {{{
-"}}}
-" C {{{
-"}}}
 " D {{{
   nnoremap <leader>d :vsp<cr>
 "}}}
@@ -211,19 +208,11 @@ inoremap <C-f> <C-x><C-f>
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
-" H {{{
-"}}}
 " L {{{
-	" Shortcut to rapidly toggle `set list`
 	nnoremap <leader>l :set list!<CR>
 "}}}
-" M {{{
-"}}}
 " N {{{
-	"set line numbers
 	nnoremap <leader>n :set number!<CR>
-
-	"set line numbers
 	nnoremap <leader>nt :NERDTreeToggle<CR>
 "}}}
 " P {{{
@@ -341,6 +330,7 @@ inoremap <C-f> <C-x><C-f>
 function! TrimWhiteSpace()
       %s/\s\+$//e
 endfunction
+
 
 autocmd BufWritePre * :call TrimWhiteSpace()
 	"}}}
