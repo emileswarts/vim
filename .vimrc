@@ -173,6 +173,8 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
+	nnoremap <C-s> :qall!<cr>
+
 	"switching between windows
 	nnoremap <C-h> <C-w>h
 	nnoremap <C-j> <C-w>j
