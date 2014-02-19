@@ -19,6 +19,7 @@
 	set cursorline
 	set gdefault
 	set shiftround
+  set ffs=unix,dos
 	set dictionary=/usr/share/dict/words
 	set encoding=utf-8
 	let tab_width=2
@@ -26,10 +27,9 @@
   set t_ti= t_te= "keep vim on the screen when sending to background
 	set history=9000
 	set hlsearch
-	set fileformats=unix,dos
-	set eol
+	set fileformats=unix
+	set fileformats+=unix
 	set ignorecase
-	set nobinary
 	set incsearch
 	set showcmd
 	set showmode
