@@ -219,6 +219,9 @@ inoremap <C-f> <C-x><C-f>
 	"paste from system clipboard
 	nnoremap <leader>p "+p
 	vnoremap <leader>p "+p
+
+	nnoremap <leader>y "+y
+	vnoremap <leader>y "+y
 "}}}
 " Q {{{
 	"quit
@@ -261,7 +264,7 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>w :w!<CR>
 "}}}
 " X {{{
-	nnoremap <leader>x :se readonly<CR>
+	" nnoremap <leader>x :se readonly<CR>
 "}}}
 " Y {{{
 	vnoremap <leader>y "+y
@@ -337,3 +340,13 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
+  "
+  "
+
+autocmd FileType ruby nmap <buffer> <leader>i <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>i <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>i <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
