@@ -173,6 +173,8 @@ syntax on
 	nnoremap <SPACE> 10j
 	vmap <SPACE> 10j
 
+	nnoremap <C-s> :qall!<cr>
+
 	"switching between windows
 	nnoremap <C-h> <C-w>h
 	nnoremap <C-j> <C-w>j
@@ -195,6 +197,9 @@ inoremap <C-f> <C-x><C-f>
 	" A {{{
   nnoremap ,a <C-^>
 	"}}}
+  " B {{{
+  nnoremap <leader>b :tabe ~/free_trial.txt<cr>
+  " }}}
 " D {{{
   nnoremap <leader>d :vsp<cr>
 "}}}
@@ -208,6 +213,9 @@ inoremap <C-f> <C-x><C-f>
 " G {{{
 	nnoremap <leader>g :Gist -la emileswarts<CR>
 "}}}
+" H {{{
+
+" }}}
 " L {{{
 	nnoremap <leader>l :set list!<CR>
 "}}}
@@ -265,6 +273,13 @@ inoremap <C-f> <C-x><C-f>
 "}}}
 " X {{{
 	" nnoremap <leader>x :se readonly<CR>
+  autocmd FileType ruby nmap <buffer> <leader>i <Plug>(xmpfilter-mark)
+  autocmd FileType ruby xmap <buffer> <leader>i <Plug>(xmpfilter-mark)
+  autocmd FileType ruby vmap <buffer> <leader>i <Plug>(xmpfilter-mark)
+
+  autocmd FileType ruby nmap <buffer> <leader>x ma:set nocursorline nocursorcolumn<CR><Plug>(xmpfilter-run)'a
+  autocmd FileType ruby xmap <buffer> <leader>x ma:set nocursorline nocursorcolumn<CR><Plug>(xmpfilter-run)'a
+  autocmd FileType ruby vmap <buffer> <leader>x ma:set nocursorline nocursorcolumn<CR><Plug>(xmpfilter-run)'a
 "}}}
 " Y {{{
 	vnoremap <leader>y "+y
@@ -340,13 +355,3 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
-  "
-  "
-
-autocmd FileType ruby nmap <buffer> <leader>i <Plug>(xmpfilter-mark)
-autocmd FileType ruby xmap <buffer> <leader>i <Plug>(xmpfilter-mark)
-autocmd FileType ruby imap <buffer> <leader>i <Plug>(xmpfilter-mark)
-
-autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
