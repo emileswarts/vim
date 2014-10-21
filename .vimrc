@@ -124,10 +124,9 @@ syntax on
 "}}}
 "REMAP KEYS{{{
 	" Use literal match by default
-	nnoremap / /\V
-	vnoremap / /\V
-	nnoremap ? ?\V
-	vnoremap ? ?\V
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
 
 	nnoremap ' `
 	nnoremap ` '
