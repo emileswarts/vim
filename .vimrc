@@ -87,6 +87,9 @@
   au BufRead,BufNewFile *.json set ft=javascript
   au BufRead,BufNewFile *.scss set filetype=scss
 
+  au FileType php setlocal shiftwidth=4
+  au FileType php setlocal smarttab
+
 "}}}
 " PLUGINS {{{
 	" Yankring {{{
@@ -150,8 +153,6 @@ syntax on
 	noremap H H
 	noremap U <C-R>
 
-	" Keep search matches in the middle of the window and pulse the line when moving
-	" to them.
 	cnoremap w!! w !sudo tee % >/dev/null
 	map <tab> %
 
@@ -206,6 +207,7 @@ inoremap <C-f> <C-x><C-f>
 " E {{{
 	nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 	nnoremap <leader>ev :vsp ~/.vimrc<CR>
+	nnoremap <leader>en :vsp ~/notes<CR>
 "}}}
 " F {{{
 	nnoremap <leader>f 30<c-w>><CR>
@@ -262,6 +264,8 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>ts :CommandT spec<cr>
 "}}}
 " U {{{
+  nnoremap <leader>u :Ag
+  vnoremap <leader>u y:Ag <C-r>"
 "}}}
 " V {{{
   "select to end of line
@@ -312,7 +316,50 @@ inoremap <C-f> <C-x><C-f>
 	augroup ft_sql
 		au!
 		au BufNewFile,BufRead *.sql set filetype=sql
+    nnoremap <C-e> :.,.DBExecRangeSQL<CR>
 	augroup END
+" }}}
+" PHP {{{
+
+  " function SetPHPCmdTOptions()
+    nnoremap <leader>m :CommandT<cr>
+    nnoremap <leader>ts :CommandT src<cr>
+
+    nnoremap <leader>tff :CommandT specs/features/cms<cr>
+    nnoremap <leader>tfs :CommandT specs/steps/CMS<cr>
+
+    nnoremap <leader>td :CommandT db<cr>
+    nnoremap <leader>tw :CommandT web<cr>
+
+    nnoremap <leader>tc :CommandT config<cr>
+    let g:CommandTWildIgnore=&wildignore . ",**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/app/*,**/images/*,**/lib/*,**/node_modules/*,**/reports/*,**/shop/*"
+  " endfunction
+
+  " function SetCmdTOptions()
+  "   nnoremap <leader>m :CommandT<cr>
+  "   nnoremap <leader>ta :CommandT app<cr>
+  "   nnoremap <leader>tv :CommandT app/views<cr>
+  "   nnoremap <leader>tc :CommandT app/controllers<cr>
+  "   nnoremap <leader>tm :CommandT app/models<cr>
+
+  "   nnoremap <leader>tk :CommandT config/<cr>
+  "   nnoremap <leader>td :CommandT db<cr>
+  "   nnoremap <leader>tg :vsp Gemfile<cr>
+  "   nnoremap <leader>tl :CommandT lib<cr>
+  "   nnoremap <leader>tr :vsp config/routes.rb<cr>
+
+  "   nnoremap <leader>tf :CommandT features<cr>
+  "   nnoremap <leader>te :CommandT features/factories<cr>
+  "   nnoremap <leader>tu :CommandT features/support<cr>
+
+  "   nnoremap <leader>ts :CommandT spec<cr>
+  " endfunction
+
+  " if exists("g:symf")
+  "   call SetPHPCmdTOptions()
+  " else
+  "   call SetCmdTOptions()
+  " endif
 " }}}
 " RUBY {{{
 	augroup ft_ruby
@@ -342,6 +389,7 @@ inoremap <C-f> <C-x><C-f>
   iabbrev waht what
   iabbrev tehn then
   iabbrev teh the
+  iabbrev sfdb \Doctrine\Common\Util\Debug::dump();
 "}}}
 " FUNCTIONS {{{
 " Removes trailing spaces
@@ -355,3 +403,17 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 	" STATUS LINE {{{
 	let g:Powerline_symbols = 'fancy'
 	"}}}
+
+let g:dbext_default_profile_mysql_local_DBI = 'type=MYSQL:user=root:passwd=root:driver=mysql:conn_parms=database=kjus_development;host=192.168.0.101'
+
+
+	function! EatChar(pat)
+		let c = nr2char(getchar(0))
+		return (c =~ a:pat) ? '' : c
+	endfunction
+
+	function! MakeSpacelessIabbrev(from, to)
+		execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
+	endfunction
+
+	call MakeSpacelessIabbrev('d', '$')
