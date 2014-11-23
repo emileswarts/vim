@@ -200,6 +200,9 @@ inoremap <C-f> <C-x><C-f>
   " B {{{
   nnoremap <leader>b :tabe ~/free_trial.txt<cr>
   " }}}
+" C {{{
+  nnoremap <leader>c :Tagbar<cr>
+"}}}
 " D {{{
   nnoremap <leader>d :vsp<cr>
 "}}}
