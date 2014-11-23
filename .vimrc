@@ -227,6 +227,10 @@ inoremap <C-f> <C-x><C-f>
 	nnoremap <leader>n :set number!<CR>
 	nnoremap <leader>nt :NERDTreeToggle<CR>
 "}}}
+" O {{{
+  "Panic button
+	nnoremap <leader>o moggVGg?'o
+"}}}
 " P {{{
 	"paste from system clipboard
 	nnoremap <leader>p "+p
