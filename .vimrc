@@ -67,6 +67,7 @@
 	filetype indent on
 	set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  au FocusLost * :silent! wall
 
 	if has("autocmd")
 		autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
