@@ -53,6 +53,7 @@ set tags+=tags;$HOME
 set term=screen-256color
 set textwidth=150
 set title
+set ttyfast " Not sure what this does
 set undodir=~/.vim/tmp/undo//     " undo files
 set vb t_vb=
 set virtualedit=all
@@ -349,13 +350,6 @@ augroup END
 " {{{ MARKDOWN
 augroup ft_md
   au BufNewFile,BufRead *.md setlocal filetype=markdown
-augroup END
-" }}}
-" MYSQL {{{
-augroup ft_sql
-  au!
-  au BufNewFile,BufRead *.sql set filetype=sql
-  nnoremap <C-e> :.,.DBExecRangeSQL<CR>
 augroup END
 " }}}
 " RUBY {{{
