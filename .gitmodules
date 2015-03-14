@@ -1,0 +1,3 @@
+[submodule "/Users/korpz/.vim/bundle/yankring"]
+	path = /Users/korpz/.vim/bundle/yankring
+	url = git@github.com:vim-scripts/YankRing.vim.git
