@@ -67,3 +67,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = git@github.com:tmhedberg/matchit.git
