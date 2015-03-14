@@ -22,3 +22,6 @@
 [submodule "bundle/xmpfilter"]
 	path = bundle/xmpfilter
 	url = git@github.com:t9md/vim-ruby-xmpfilter.git
+[submodule "bundle/ruby"]
+	path = bundle/ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
