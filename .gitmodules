@@ -10,3 +10,6 @@
 [submodule "vim-twig"]
 	path = vim-twig
 	url = git@github.com:evidens/vim-twig.git
+[submodule "bundle/textobj-user"]
+	path = bundle/textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
