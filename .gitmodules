@@ -1,3 +1,6 @@
 [submodule "/Users/korpz/.vim/bundle/yankring"]
 	path = /Users/korpz/.vim/bundle/yankring
 	url = git@github.com:vim-scripts/YankRing.vim.git
+[submodule "bundle/webapi"]
+	path = bundle/webapi
+	url = git@github.com:mattn/webapi-vim.git
