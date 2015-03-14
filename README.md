@@ -8,3 +8,9 @@
 Create symlinks:
 
     ln -s ~/.vim/.vimrc ~/.vimrc
+
+The plugins are contained as submodules.
+
+    git submodule init
+    git submodule update
+
