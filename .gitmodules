@@ -40,3 +40,6 @@
 [submodule "bundle/cucumber"]
 	path = bundle/cucumber
 	url = git@github.com:tpope/vim-cucumber.git
+[submodule "bundle/commentary"]
+	path = bundle/commentary
+	url = git@github.com:tpope/vim-commentary.git
