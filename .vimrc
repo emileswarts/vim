@@ -65,6 +65,7 @@ set notimeout
 set showmatch
 set t_ti= t_te= "keep vim on the screen when sending to background
 set ttimeout
+set ttimeoutlen=-1
 let mapleader = ","
 let maplocalleader = "\\"
 filetype indent on
@@ -86,6 +87,22 @@ augroup AutoWrite
   autocmd! BufLeave * :update
 augroup END
 
+au FileType php setlocal shiftwidth=4
+au FileType php setlocal smarttab
+
+  " function SetPHPCmdTOptions()
+    nnoremap <leader>m :CommandT<cr>
+    nnoremap <leader>ts :CommandT src<cr>
+
+    nnoremap <leader>tff :CommandT specs/features/cms<cr>
+    nnoremap <leader>tfs :CommandT specs/steps/CMS<cr>
+
+    nnoremap <leader>td :CommandT db<cr>
+    nnoremap <leader>tw :CommandT web<cr>
+
+    nnoremap <leader>tc :CommandT config<cr>
+    let g:CommandTWildIgnore=&wildignore . ",**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/app/*,**/images/*,**/lib/*,**/node_modules/*,**/reports/*,**/shop/*"
+  " endfunction
 let g:ruby_doc_command='open'
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
@@ -127,9 +144,6 @@ let g:rbpt_colorpairs = [
       \ ['red',         'firebrick3'],
       \ ]
 "}}}
-" Dbext {{{
-let g:dbext_default_profile_mysql_local_DBI = 'type=MYSQL:user=root:passwd=:driver=mysql:conn_parms=database=kjus_development;host=192.168.0.101'
-"}}}
 " CommandT {{{
 let g:CommandTWildIgnore=&wildignore . ",*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*"
 let g:CommandTMaxHeight = 25
@@ -145,6 +159,12 @@ filetype plugin on
 
 set t_Co=256
 colorscheme badwolf
+
+let g:dbext_default_buffer_lines = 30
+let g:dbext_default_MYSQL_bin = '/usr/local/bin/mysql'
+let g:dbext_default_passwd = ''
+let g:dbext_default_profile_kjus = 'type=MYSQL:dbname=kjus_development:user=root:host=192.168.0.100'
+let g:dbext_default_profile_surfaceview_dev = 'type=MYSQL:dbname=surfaceview_dev:user=root:host=192.168.0.100'
 
 "Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -256,6 +276,10 @@ nnoremap <leader>f 30<c-w>><CR>
 " H {{{
 
 " }}}
+" K {{{
+nnoremap <leader>kk :tabe ~/mysql/kjus.sql<CR>
+nnoremap <leader>ks :tabe ~/mysql/surfaceview.sql<CR>
+"}}}
 " L {{{
 nnoremap <leader>l :set list!<CR>
 "}}}
@@ -292,9 +316,9 @@ nnoremap <leader>tm :CommandT app/models<cr>
 
 nnoremap <leader>tk :CommandT config/<cr>
 nnoremap <leader>td :CommandT db<cr>
-nnoremap <leader>tg :vsp Gemfile<cr>
+nnoremap <leader>tg :sp Gemfile<cr>
 nnoremap <leader>tl :CommandT lib<cr>
-nnoremap <leader>tr :vsp config/routes.rb<cr>
+nnoremap <leader>tr :sp config/routes.rb<cr>
 
 nnoremap <leader>tf :CommandT features<cr>
 nnoremap <leader>te :CommandT features/factories<cr>
@@ -339,9 +363,6 @@ nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 augroup ft_css
   nnoremap <leader>i 0f;i !important<ESC>0
   au!
-
-  " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
-  " positioned inside of them AND the following code doesn't get unfolded.
   au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
 augroup END
 "}}}
@@ -350,6 +371,11 @@ augroup END
 " {{{ MARKDOWN
 augroup ft_md
   au BufNewFile,BufRead *.md setlocal filetype=markdown
+augroup END
+" }}}
+" {{{ MYSQL
+augroup ft_mysql
+  au BufNewFile,BufRead *.sql colorscheme badwolf
 augroup END
 " }}}
 " RUBY {{{
@@ -402,3 +428,5 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 " STATUS LINE {{{
 let g:Powerline_symbols = 'fancy'
 "}}}
+
+iabbrev sfdb \Doctrine\Common\Util\Debug::dump(
