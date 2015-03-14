@@ -16,3 +16,6 @@
 [submodule "bundle/text-obj-rubyblock"]
 	path = bundle/text-obj-rubyblock
 	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
+[submodule "bundle/seek"]
+	path = bundle/seek
+	url = git@github.com:goldfeld/vim-seek.git
