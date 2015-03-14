@@ -73,3 +73,6 @@
 [submodule "bundle/l9"]
 	path = bundle/l9
 	url = git@github.com:eparreno/vim-l9.git
+[submodule "bundle/incsearch"]
+	path = bundle/incsearch
+	url = git@github.com:haya14busa/incsearch.vim.git
