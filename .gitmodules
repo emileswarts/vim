@@ -64,3 +64,6 @@
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = git@github.com:evanmiller/nginx-vim-syntax.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
