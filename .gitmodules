@@ -79,3 +79,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git@github.com:vim-scripts/Tagbar.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "bundle/snippets"]
+	path = bundle/snippets
+	url = https://github.com/honza/vim-snippets.git

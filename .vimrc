@@ -115,6 +115,11 @@ au BufRead,BufNewFile *.scss set filetype=scss
 let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
 "}}}
+"UTIL SNIPS {{{
+let g:UltiSnipsExpandTrigger="<c-x>e"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" }}}
 " YCM {{{
 let g:ycm_collect_identifiers_from_tags_files = 1
 "}}}
