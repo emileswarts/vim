@@ -268,9 +268,10 @@ nnoremap <leader>c :Tagbar<cr>
 nnoremap <leader>d :vsp<cr>
 "}}}
 " E {{{
+nnoremap <leader>en :vsp ~/notes<CR>
 nnoremap <leader>et :vsp ~/.tmux.conf<CR>
 nnoremap <leader>ev :vsp ~/.vimrc<CR>
-nnoremap <leader>en :vsp ~/notes<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
 "}}}
 " F {{{
 nnoremap <leader>f 30<c-w>><CR>
