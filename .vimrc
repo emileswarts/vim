@@ -116,7 +116,7 @@ let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
 "}}}
 "UTIL SNIPS {{{
-let g:UltiSnipsExpandTrigger="<c-x>e"
+let g:UltiSnipsExpandTrigger="<c-d>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
