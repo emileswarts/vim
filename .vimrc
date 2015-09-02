@@ -271,7 +271,7 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>f 30<c-w>><CR>
 " }}}
 " G {{{
-" nnoremap <leader>g :Gist -la emileswarts<CR>
+nnoremap <leader>g :silent !java -classpath /Users/korpz/.vim/bundle/vim-money/ BegForMoney<CR>
 "}}}
 " H {{{
 
