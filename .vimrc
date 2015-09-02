@@ -164,8 +164,6 @@ colorscheme badwolf
 let g:dbext_default_buffer_lines = 30
 let g:dbext_default_MYSQL_bin = '/usr/local/bin/mysql'
 let g:dbext_default_passwd = ''
-let g:dbext_default_profile_kjus = 'type=MYSQL:dbname=kjus_development:user=root:host=192.168.0.100'
-let g:dbext_default_profile_surfaceview_dev = 'type=MYSQL:dbname=surfaceview_dev:user=root:host=192.168.0.100'
 
 "Invisible character colors
 highlight NonText guifg=#4a4a59
