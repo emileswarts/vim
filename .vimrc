@@ -82,9 +82,6 @@ if has("autocmd")
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
-au FileType php setlocal shiftwidth=4
-au FileType php setlocal smarttab
-
   " function SetPHPCmdTOptions()
     nnoremap <leader>m :CommandT<cr>
     nnoremap <leader>ts :CommandT src<cr>
