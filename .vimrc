@@ -45,7 +45,6 @@ set shortmess=atI
 set showcmd
 set showmode
 set smartcase
-set mouse
 set smartindent
 set spelllang=en_gb  "spell checking
 set tabstop=2
@@ -421,3 +420,5 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 " STATUS LINE {{{
 let g:Powerline_symbols = 'fancy'
 "}}}
+
+
