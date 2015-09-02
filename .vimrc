@@ -277,8 +277,6 @@ nnoremap <leader>f 30<c-w>><CR>
 
 " }}}
 " K {{{
-nnoremap <leader>kk :tabe ~/mysql/kjus.sql<CR>
-nnoremap <leader>ks :tabe ~/mysql/surfaceview.sql<CR>
 "}}}
 " L {{{
 nnoremap <leader>l :set list!<CR>
