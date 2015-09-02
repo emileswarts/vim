@@ -83,10 +83,6 @@ if has("autocmd")
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
-augroup AutoWrite
-  autocmd! BufLeave * :update
-augroup END
-
 au FileType php setlocal shiftwidth=4
 au FileType php setlocal smarttab
 
