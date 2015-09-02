@@ -212,8 +212,6 @@ noremap U <C-R>
 cnoremap w!! w !sudo tee % >/dev/null
 map <tab> %
 
-cnoremap vv tab sview
-
 "easy to reach keys
 noremap Y "*yy
 
