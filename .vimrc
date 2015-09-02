@@ -45,6 +45,7 @@ set shortmess=atI
 set showcmd
 set showmode
 set smartcase
+set mouse
 set smartindent
 set spelllang=en_gb  "spell checking
 set tabstop=2
