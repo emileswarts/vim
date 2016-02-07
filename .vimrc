@@ -237,21 +237,20 @@ inoremap <C-f> <C-x><C-f>
 "}}}
 " LEADER REMAP KEYS{{{
 " MISC {{{
-noremap <leader><space> :noh<cr>
+noremap <leader>b :noh<cr>
+noremap <leader>/ :Ag '
 nnoremap <leader><leader> :CommandTBuffer<cr>
 "}}}
 " 1 {{{
-inoremap <c-q>v <% 100.times do %><esc>yypwct%end <esc>O<% p %><esc>hha
-inoremap <c-q> 100.times do<esc>oend<C-o>Op
 "}}}
 " A {{{
-nnoremap ,a <C-^>
+nnoremap <leader>a <C-^>
 "}}}
 " B {{{
-nnoremap <leader>b :tabe ~/free_trial.txt<cr>
 " }}}
 " C {{{
-nnoremap <leader>c :Tagbar<cr>
+nnoremap <leader>c :Commentary<cr>
+vnoremap <leader>c :Commentary<cr>
 "}}}
 " D {{{
 nnoremap <leader>d :vsp<cr>
