@@ -13,6 +13,7 @@ call pathogen#helptags()
 let tab_width=2
 set autoindent
 set autoread
+set mouse=a
 set backspace=indent,eol,start " Intuitive backspacing in insert mode
 set cursorcolumn
 set cursorline
