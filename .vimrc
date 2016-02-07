@@ -276,7 +276,7 @@ nnoremap <leader>gv2 :Git show -p head~2<cr>
 nnoremap <leader>gv3 :Git show -p head~3<cr>
 "}}}
 " H {{{
-
+nnoremap <leader>h oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 " }}}
 " K {{{
 "}}}
