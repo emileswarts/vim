@@ -66,7 +66,7 @@ set showmatch
 set t_ti= t_te= "keep vim on the screen when sending to background
 set ttimeout
 set ttimeoutlen=-1
-let mapleader = ","
+let mapleader = "\<Space>"
 let maplocalleader = "\\"
 filetype indent on
 set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
