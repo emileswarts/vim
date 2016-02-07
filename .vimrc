@@ -428,5 +428,3 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 " STATUS LINE {{{
 let g:Powerline_symbols = 'fancy'
 "}}}
-
-
