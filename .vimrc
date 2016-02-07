@@ -265,7 +265,15 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>f 30<c-w>><CR>
 " }}}
 " G {{{
-nnoremap <leader>g :silent !java -classpath /Users/korpz/.vim/bundle/vim-money/ BegForMoney<CR>
+nnoremap <leader>gp :Gpull<cr>
+nnoremap <leader>gP :Gpush<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gvh :Git show -p head<cr>
+nnoremap <leader>gv1 :Git show -p head~1<cr>
+nnoremap <leader>gv2 :Git show -p head~2<cr>
+nnoremap <leader>gv3 :Git show -p head~3<cr>
 "}}}
 " H {{{
 
