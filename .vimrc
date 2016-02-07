@@ -327,8 +327,7 @@ nnoremap <leader>tu :CommandT features/support<cr>
 nnoremap <leader>ts :CommandT spec<cr>
 "}}}
 " U {{{
-nnoremap <leader>u :Ag
-vnoremap <leader>u y:Ag <C-r>"
+nnoremap <leader>u :GundoToggle<CR>
 "}}}
 " V {{{
 "select to end of line
