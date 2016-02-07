@@ -285,7 +285,7 @@ nnoremap <leader>l :set list!<CR>
 "}}}
 " N {{{
 nnoremap <leader>n :set number!<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeTabsToggle<CR>
 "}}}
 " O {{{
 "Panic button
