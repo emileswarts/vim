@@ -339,6 +339,7 @@ nnoremap <leader>w :w!<CR>
 "}}}
 " X {{{
 " nnoremap <leader>x :se readonly<CR>
+let g:xmpfilter_cmd = '/Users/korpz/.rbenv/shims/xmpfilter'
 autocmd FileType ruby nmap <buffer> <leader>i <Plug>(xmpfilter-mark)
 autocmd FileType ruby xmap <buffer> <leader>i <Plug>(xmpfilter-mark)
 autocmd FileType ruby vmap <buffer> <leader>i <Plug>(xmpfilter-mark)
