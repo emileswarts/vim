@@ -116,6 +116,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " YCM {{{
 let g:ycm_collect_identifiers_from_tags_files = 1
 "}}}
+" NerdTree{{{
+let NERDTreeShowHidden=1
+" }}}
 " Rainbow parentheses {{{
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
