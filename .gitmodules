@@ -88,24 +88,24 @@
 [submodule "YouCompleteMe"]
 	path = YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
-[submodule "Cmd2.vim"]
-	path = Cmd2.vim
+[submodule "bundle/Cmd2.vim"]
+	path = bundle/Cmd2.vim
 	url = git@github.com:gelguy/Cmd2.vim.git
-[submodule "ack.vim"]
-	path = ack.vim
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
-[submodule "command-t"]
-	path = command-t
+[submodule "bundle/command-t"]
+	path = bundle/command-t
 	url = git@github.com:wincent/command-t.git
-[submodule "gundo.vim"]
-	path = gundo.vim
+[submodule "bundle/gundo.vim"]
+	path = bundle/gundo.vim
 	url = git@github.com:sjl/gundo.vim.git
-[submodule "vim-nerdtree-tabs"]
-	path = vim-nerdtree-tabs
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
 	url = git@github.com:jistr/vim-nerdtree-tabs.git
-[submodule "vim-rbenv"]
-	path = vim-rbenv
+[submodule "bundle/vim-rbenv"]
+	path = bundle/vim-rbenv
 	url = git@github.com:tpope/vim-rbenv.git
-[submodule "YankRing.vim"]
-	path = YankRing.vim
+[submodule "bundle/YankRing.vim"]
+	path = bundle/YankRing.vim
 	url = git@github.com:vim-scripts/YankRing.vim.git
