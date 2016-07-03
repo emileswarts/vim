@@ -109,3 +109,9 @@
 [submodule "bundle/YankRing.vim"]
 	path = bundle/YankRing.vim
 	url = git@github.com:vim-scripts/YankRing.vim.git
+[submodule "vim-coffee-script"]
+	path = vim-coffee-script
+	url = git@github.com:vim-scripts/vim-coffee-script.git
+[submodule "vim-l9"]
+	path = vim-l9
+	url = git@github.com:eparreno/vim-l9.git
