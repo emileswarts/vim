@@ -91,3 +91,6 @@
 [submodule "Cmd2.vim"]
 	path = Cmd2.vim
 	url = git@github.com:gelguy/Cmd2.vim.git
+[submodule "ack.vim"]
+	path = ack.vim
+	url = git@github.com:mileszs/ack.vim.git
