@@ -109,18 +109,18 @@
 [submodule "bundle/YankRing.vim"]
 	path = bundle/YankRing.vim
 	url = git@github.com:vim-scripts/YankRing.vim.git
-[submodule "vim-coffee-script"]
-	path = vim-coffee-script
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
 	url = git@github.com:vim-scripts/vim-coffee-script.git
-[submodule "vim-l9"]
-	path = vim-l9
+[submodule "bundle/vim-l9"]
+	path = bundle/vim-l9
 	url = git@github.com:eparreno/vim-l9.git
-[submodule "taglist.vim"]
-	path = taglist.vim
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
 	url = git@github.com:vim-scripts/taglist.vim.git
-[submodule "vim-textobj-user"]
-	path = vim-textobj-user
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
-[submodule "vim-ruby-xmpfilter"]
-	path = vim-ruby-xmpfilter
+[submodule "bundle/vim-ruby-xmpfilter"]
+	path = bundle/vim-ruby-xmpfilter
 	url = git@github.com:t9md/vim-ruby-xmpfilter.git
