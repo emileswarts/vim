@@ -94,3 +94,6 @@
 [submodule "ack.vim"]
 	path = ack.vim
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "command-t"]
+	path = command-t
+	url = git@github.com:wincent/command-t.git
