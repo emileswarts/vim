@@ -106,3 +106,6 @@
 [submodule "vim-rbenv"]
 	path = vim-rbenv
 	url = git@github.com:tpope/vim-rbenv.git
+[submodule "YankRing.vim"]
+	path = YankRing.vim
+	url = git@github.com:vim-scripts/YankRing.vim.git
