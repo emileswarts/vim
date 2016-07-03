@@ -97,3 +97,6 @@
 [submodule "command-t"]
 	path = command-t
 	url = git@github.com:wincent/command-t.git
+[submodule "gundo.vim"]
+	path = gundo.vim
+	url = git@github.com:sjl/gundo.vim.git
