@@ -115,3 +115,12 @@
 [submodule "vim-l9"]
 	path = vim-l9
 	url = git@github.com:eparreno/vim-l9.git
+[submodule "taglist.vim"]
+	path = taglist.vim
+	url = git@github.com:vim-scripts/taglist.vim.git
+[submodule "vim-textobj-user"]
+	path = vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "vim-ruby-xmpfilter"]
+	path = vim-ruby-xmpfilter
+	url = git@github.com:t9md/vim-ruby-xmpfilter.git
