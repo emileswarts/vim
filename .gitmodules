@@ -88,3 +88,6 @@
 [submodule "YouCompleteMe"]
 	path = YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
+[submodule "Cmd2.vim"]
+	path = Cmd2.vim
+	url = git@github.com:gelguy/Cmd2.vim.git
