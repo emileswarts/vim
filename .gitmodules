@@ -103,3 +103,6 @@
 [submodule "vim-nerdtree-tabs"]
 	path = vim-nerdtree-tabs
 	url = git@github.com:jistr/vim-nerdtree-tabs.git
+[submodule "vim-rbenv"]
+	path = vim-rbenv
+	url = git@github.com:tpope/vim-rbenv.git
