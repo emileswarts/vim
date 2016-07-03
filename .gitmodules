@@ -124,3 +124,6 @@
 [submodule "bundle/vim-ruby-xmpfilter"]
 	path = bundle/vim-ruby-xmpfilter
 	url = git@github.com:t9md/vim-ruby-xmpfilter.git
+[submodule "bundle/ri"]
+	path = bundle/ri
+	url = git@github.com:danchoi/ri.vim.git

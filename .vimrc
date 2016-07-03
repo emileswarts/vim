@@ -84,16 +84,6 @@ if has("autocmd")
 endif
 
   " function SetPHPCmdTOptions()
-    nnoremap <leader>m :CommandT<cr>
-    nnoremap <leader>ts :CommandT src<cr>
-
-    nnoremap <leader>tff :CommandT specs/features/cms<cr>
-    nnoremap <leader>tfs :CommandT specs/steps/CMS<cr>
-
-    nnoremap <leader>td :CommandT db<cr>
-    nnoremap <leader>tw :CommandT web<cr>
-
-    nnoremap <leader>tc :CommandT config<cr>
     let g:CommandTWildIgnore=&wildignore . ",**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/app/*,**/images/*,**/lib/*,**/node_modules/*,**/reports/*,**/shop/*"
   " endfunction
 let g:ruby_doc_command='open'
@@ -282,6 +272,7 @@ nnoremap <leader>gv3 :Git show -p head~3<cr>
 nnoremap <leader>h oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 " }}}
 " K {{{
+nnoremap <leader>k :Tagbar<CR>
 "}}}
 " L {{{
 nnoremap <leader>l :set list!<CR>
@@ -292,7 +283,8 @@ nnoremap <leader>nt :NERDTreeTabsToggle<CR>
 "}}}
 " O {{{
 "Panic button
-nnoremap <leader>o moggVGg?'o
+nnoremap  <leader>o :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  <leader>os :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 "}}}
 " P {{{
 "paste from system clipboard
@@ -322,10 +314,6 @@ nnoremap <leader>td :CommandT db<cr>
 nnoremap <leader>tg :sp Gemfile<cr>
 nnoremap <leader>tl :CommandT lib<cr>
 nnoremap <leader>tr :sp config/routes.rb<cr>
-
-nnoremap <leader>tf :CommandT features<cr>
-nnoremap <leader>te :CommandT features/factories<cr>
-nnoremap <leader>tu :CommandT features/support<cr>
 
 nnoremap <leader>ts :CommandT spec<cr>
 "}}}
