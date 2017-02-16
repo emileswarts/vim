@@ -85,9 +85,6 @@
 [submodule "bundle/snippets"]
 	path = bundle/snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "YouCompleteMe"]
-	path = YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "bundle/Cmd2.vim"]
 	path = bundle/Cmd2.vim
 	url = git@github.com:gelguy/Cmd2.vim.git
@@ -133,3 +130,6 @@
 [submodule "bundle/vim-tmux-runner"]
 	path = bundle/vim-tmux-runner
 	url = https://github.com/christoomey/vim-tmux-runner.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = git@github.com:tpope/vim-fireplace.git
