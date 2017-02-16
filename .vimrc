@@ -50,7 +50,7 @@ set smartindent
 set spelllang=en_gb  "spell checking
 set tabstop=2
 set tags+=tags;$HOME
-set term=screen-256color
+"set term=screen-256color
 set textwidth=150
 set title
 set ttyfast " Not sure what this does
@@ -87,6 +87,8 @@ endif
     let g:CommandTWildIgnore=&wildignore . ",**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/app/*,**/images/*,**/lib/*,**/node_modules/*,**/reports/*,**/shop/*"
   " endfunction
 let g:ruby_doc_command='open'
+
+let g:spec_runner_dispatcher = 'call Send_to_Tmux("clear\n{command}\n")'
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | set wrap
@@ -176,6 +178,8 @@ map g/ <Plug>(incsearch-stay)
 nnoremap ' `
 nnoremap ` '
 
+nnoremap <leader>x <Plug>RunFocusedSpec
+
 map <tab> %
 
 "escape to normal mode
@@ -203,18 +207,12 @@ map <tab> %
 "easy to reach keys
 noremap Y "*yy
 
-nnoremap S i<cr><esc><right>
-
 "Create space underneath line
 nnoremap - mz<esc>o<esc>'z
 
 "Create space above line
 nnoremap _ mz<esc>O<esc>'z
 inoremap <c-d> <esc>ddi
-
-"scroll down
-nnoremap <SPACE> 10j
-vmap <SPACE> 10j
 
 nnoremap <C-s> :qall!<cr>
 
@@ -258,11 +256,15 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>f 30<c-w>><CR>
 " }}}
 " G {{{
-nnoremap <leader>gp :Gpull<cr>
+nnoremap <leader>ga :Git add .<cr>
+nnoremap <leader>gc :Git commit -m
+nnoremap <leader>gp :silent Git pull<cr>
 nnoremap <leader>gP :Gpush<cr>
 nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gD :Git diff --cached<cr>
 nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gs :Git status<cr>
+nnoremap <leader>gr :silent Git reset --hard<cr>
 nnoremap <leader>gvh :Git show -p head<cr>
 nnoremap <leader>gv1 :Git show -p head~1<cr>
 nnoremap <leader>gv2 :Git show -p head~2<cr>
@@ -271,9 +273,9 @@ nnoremap <leader>gv3 :Git show -p head~3<cr>
 " H {{{
 nnoremap <leader>h oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 " }}}
-" K {{{
-nnoremap <leader>k :Tagbar<CR>
-"}}}
+" " K {{{
+" nnoremap <leader>k :Tagbar<CR>
+" "}}}
 " L {{{
 nnoremap <leader>l :set list!<CR>
 "}}}
@@ -326,7 +328,7 @@ nnoremap <leader>v v$
 "}}}
 " W {{{
 "save
-nnoremap <leader>w :w!<CR>
+nnoremap <leader>w :w!<cr>
 "}}}
 " X {{{
 " nnoremap <leader>x :se readonly<CR>
