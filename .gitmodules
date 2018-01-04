@@ -127,9 +127,6 @@
 [submodule "bundle/vim-spec-runner"]
 	path = bundle/vim-spec-runner
 	url = git@github.com:gabebw/vim-spec-runner.git
-[submodule "bundle/vim-tmux-runner"]
-	path = bundle/vim-tmux-runner
-	url = https://github.com/christoomey/vim-tmux-runner.git
 [submodule "bundle/vim-fireplace"]
 	path = bundle/vim-fireplace
 	url = git@github.com:tpope/vim-fireplace.git

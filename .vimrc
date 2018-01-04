@@ -1,13 +1,7 @@
-"WELCOME{{{
-"EMILE SWARTS VIMRC
-"COLEMAK KEYBOARD LAYOUT
-"}}}
 " PATHOGEN {{{
 filetype off
-"pathogen has to be called before filetype detection
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 "}}}
 "BASIC OPTIONS {{{
 let tab_width=2
@@ -31,7 +25,7 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set listchars=tab:▸\ ,eol:❤
-set nobackup "no backups
+set nobackup
 set nocompatible
 set nolist
 set noswapfile
@@ -47,14 +41,12 @@ set showcmd
 set showmode
 set smartcase
 set smartindent
-set spelllang=en_gb  "spell checking
+set spelllang=en_gb
 set tabstop=2
 set tags+=tags;$HOME
-"set term=screen-256color
 set textwidth=150
 set title
 set ttyfast " Not sure what this does
-set undodir=~/.vim/tmp/undo//     " undo files
 set vb t_vb=
 set virtualedit=all
 set wildmode=list:longest "when pressing tab see as many options as possible
@@ -67,7 +59,6 @@ set t_ti= t_te= "keep vim on the screen when sending to background
 set ttimeout
 set ttimeoutlen=-1
 let mapleader = "\<Space>"
-let maplocalleader = "\\"
 filetype indent on
 set backupskip=/tmp/*,/private/tmp/*" " Crontab files need this below
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -83,12 +74,7 @@ if has("autocmd")
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
-  " function SetPHPCmdTOptions()
-    let g:CommandTWildIgnore=&wildignore . ",**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/app/*,**/images/*,**/lib/*,**/node_modules/*,**/reports/*,**/shop/*"
-  " endfunction
 let g:ruby_doc_command='open'
-
-let g:spec_runner_dispatcher = 'call Send_to_Tmux("clear\n{command}\n")'
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | set wrap
@@ -100,11 +86,6 @@ au BufRead,BufNewFile *.scss set filetype=scss
 let g:yankring_window_use_bottom = 0
 let g:yankring_window_height = 15
 "}}}
-"UTIL SNIPS {{{
-let g:UltiSnipsExpandTrigger="<c-d>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" }}}
 " YCM {{{
 let g:ycm_collect_identifiers_from_tags_files = 1
 "}}}
@@ -138,9 +119,8 @@ let g:rbpt_colorpairs = [
       \ ]
 "}}}
 " CommandT {{{
-let g:CommandTWildIgnore=&wildignore . ",*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*"
+let g:CommandTWildIgnore="**/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/data/*,*/.jpg/*,*/.jpeg/*,*/.png/*,*/.gif/*,**/logs/*,**/*.sql,**/assets/fonts/*,**/vendor/*,**/images/*,**/reports/*"
 let g:CommandTMaxHeight = 25
-
 let g:CommandTCancelMap=['<ESC>', '<C-c>']
 let g:CommandTHighlightColor="Pmenu"
 let g:CommandTBackspaceMap='<C-h>'
@@ -157,7 +137,6 @@ let g:dbext_default_buffer_lines = 30
 let g:dbext_default_MYSQL_bin = '/usr/local/bin/mysql'
 let g:dbext_default_passwd = ''
 
-"Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 silent !echo -ne "]12;\#dd4010\x7"
@@ -170,53 +149,31 @@ au BufNewFile,BufRead /etc/httpd/* setf apache
 syntax on
 "}}}
 "REMAP KEYS{{{
-" Use literal match by default
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 nnoremap ' `
 nnoremap ` '
-
-nnoremap <leader>x <Plug>RunFocusedSpec
-
 map <tab> %
-
-"escape to normal mode
 inoremap tn <ESC>
 vnoremap tn <ESC>
-
-"Make D act normally
 nmap D d$
-
 nnoremap S i<CR><esc><right>
-
-"change behaviour of k to *
 noremap K *zz
-
 noremap j gj
 noremap k gk
 noremap n nzz
 noremap N Nzz
 noremap H H
 noremap U <C-R>
-
 cnoremap w!! w !sudo tee % >/dev/null
 map <tab> %
-
-"easy to reach keys
 noremap Y "*yy
-
-"Create space underneath line
 nnoremap - mz<esc>o<esc>'z
-
-"Create space above line
 nnoremap _ mz<esc>O<esc>'z
-inoremap <c-d> <esc>ddi
-
 nnoremap <C-s> :qall!<cr>
 
-"switching between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -228,7 +185,6 @@ inoremap <C-f> <C-x><C-f>
 "}}}
 " LEADER REMAP KEYS{{{
 " MISC {{{
-noremap <leader>b :noh<cr>
 noremap <leader>/ :Ag '
 nnoremap <leader><leader> :CommandTBuffer<cr>
 "}}}
@@ -238,6 +194,7 @@ nnoremap <leader><leader> :CommandTBuffer<cr>
 nnoremap <leader>a <C-^>
 "}}}
 " B {{{
+noremap <leader>b :noh<cr>
 " }}}
 " C {{{
 nnoremap <leader>c :Commentary<cr>
@@ -301,8 +258,9 @@ nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :YRShow<CR>
 "}}}
 " S {{{
-nnoremap <leader>s :source ~/.vimrc<CR>
-nnoremap <leader>ss :set spell!<cr>
+noremap <leader>s :Ack! <cword><cr>
+" nnoremap <leader>s :source ~/.vimrc<CR>
+" nnoremap <leader>ss :set spell!<cr>
 "}}}
 " T {{{
 nnoremap <leader>m :CommandT<cr>
@@ -348,8 +306,6 @@ vnoremap <leader>y "*y
 " Z {{{
 nnoremap <leader>z :set cursorline! cursorcolumn!<CR>
 "}}}
-"}}}
-"LOCAL LEADER FUNCTIONS {{{
 "}}}
 " FILETYPE SPECIFIC {{{
 " CSS {{{
@@ -399,24 +355,13 @@ iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
 iabbrev teh the
-" iabbrev sfdb \Doctrine\Common\Util\Debug::dump();
 "}}}
 " FUNCTIONS {{{
-" Removes trailing spaces
-function! TrimWhiteSpace()
+function! TrimTrailingWhiteSpace()
   %s/\s\+$//e
 endfunction
 
-function! EatChar(pat)
-  let c = nr2char(getchar(0))
-  return (c =~ a:pat) ? '' : c
-endfunction
-
-function! MakeSpacelessIabbrev(from, to)
-  execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
-endfunction
-
-autocmd BufWritePre * :call TrimWhiteSpace()
+autocmd BufWritePre * :call TrimTrailingWhiteSpace()
 "}}}
 " STATUS LINE {{{
 let g:Powerline_symbols = 'fancy'
